@@ -125,4 +125,5 @@ src/
   `tabular-nums` on data; `font-display`/`font-heading`/`font-mono` remain as
   semantic aliases of `var(--font-sans)`.
 - Lighthouse: accessibility / best-practices / SEO are 100 and CLS is 0 on both
-  audited routes; performance is documented in `docs/progress.md`.
+  audited routes; performance is 88-93 on production builds with real
+  throttling.
