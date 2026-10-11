@@ -1,26 +1,393 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Marben — "Paper & Clay" editorial design language.
+ * Editorial tokens below are the single source of truth; the shadcn
+ * variable names are mapped onto them so ui/ components inherit the
+ * warm palette instead of their stock neutral values.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Editorial foundation */
+  --paper: #faf7f1;
+  --surface: #ffffff;
+  --surface-2: #f4efe6;
+  --ink: #1c1917;
+  --ink-muted: #57504a;
+  --ink-faint: #756b62;
+  --hairline: #e6ddcf;
+  --hairline-strong: #d3c5b0;
+
+  /* Accents */
+  --clay: #b4552d;
+  --clay-hover: #8f4222;
+  --sage: #6e7f5c;
+
+  /* Status */
+  --ok: #4c7a54;
+  --warn: #b8862d;
+  --danger: #a63d2e;
+  /* Text-safe companions for small labels (AA on paper) */
+  --sage-deep: #55654a;
+  --warn-deep: #8a6414;
+  --ok-deep: #3f6b46;
+
+  /* Warm hover tint (slightly deeper than surface-2) */
+  --tint: #efe7d8;
+
+  /* shadcn variable mapping */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--clay);
+  --primary-foreground: #fff8f2;
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-2);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--tint);
+  --accent-foreground: var(--ink);
+  --destructive: var(--danger);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--clay);
+  --chart-1: var(--clay);
+  --chart-2: var(--sage);
+  --chart-3: var(--warn);
+  --chart-4: var(--ok);
+  --chart-5: var(--danger);
+  --radius: 0.625rem;
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--clay);
+  --sidebar-primary-foreground: #fff8f2;
+  --sidebar-accent: var(--tint);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--clay);
 }
 
 @theme inline {
+  /* shadcn color mapping */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Editorial palette utilities (bg-paper, text-clay, border-hairline, ...) */
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-clay: var(--clay);
+  --color-clay-hover: var(--clay-hover);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-ok: var(--ok);
+  --color-ok-deep: var(--ok-deep);
+  --color-warn: var(--warn);
+  --color-warn-deep: var(--warn-deep);
+  --color-danger: var(--danger);
+  --color-tint: var(--tint);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --font-heading: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Warm-tinted soft shadows — never pure black */
+@theme {
+  --shadow-warm:
+    0 1px 2px rgb(28 25 23 / 0.05), 0 4px 12px rgb(28 25 23 / 0.06);
+  --shadow-warm-lg:
+    0 2px 4px rgb(28 25 23 / 0.05), 0 12px 32px rgb(28 25 23 / 0.09);
+}
+
+/* Fluid editorial display size (hero) */
+@utility text-display {
+  font-size: clamp(2.5rem, 1.5rem + 4.5vw, 5rem);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+}
+
+/* Small editorial label above headings */
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay-hover);
+}
+
+/* Subtle paper grain — dithered dot grids painted on the body background
+   itself (no fixed overlay layer, so it costs nothing to composite). */
+@utility paper-grain {
+  background-image:
+    radial-gradient(rgb(107 97 86 / 5%) 0.5px, transparent 0.5px),
+    radial-gradient(rgb(107 97 86 / 4%) 0.5px, transparent 0.5px);
+  background-size:
+    3px 3px,
+    5px 5px;
+  background-position:
+    0 0,
+    1px 2px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  :focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--clay) 20%, transparent);
+    color: var(--ink);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Zero-JS scroll reveals (Reveal / TextReveal components) */
+.reveal-rise {
+  animation: reveal-rise 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 45%;
+}
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 16px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.word-rise {
+  animation: word-rise 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes word-rise {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-rise,
+  .word-rise {
+    animation: none;
+  }
+}
+
+/* Border beam — traveling accent light (BorderBeam component) */
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@keyframes beam-spin {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+.border-beam {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--beam-size, 1.5px);
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.border-beam::after {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    transparent 250deg,
+    var(--beam-color, var(--clay)) 330deg,
+    transparent 360deg
+  );
+  animation: beam-spin var(--beam-duration, 6s) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .border-beam::after {
+    animation: none;
+  }
+}
+
+/* Marquee — seamless infinite strip (Marquee component) */
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(calc(-50% - var(--marquee-gap, 2rem) / 2));
+  }
+}
+.marquee-track {
+  animation: marquee-scroll var(--marquee-duration, 32s) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee-viewport {
+    overflow: visible;
+  }
+}
+
+/* Print: light paper surfaces, no grain, reveal content always visible */
+@media print {
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  [data-print-hide] {
+    display: none !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .reveal-rise,
+  .word-rise {
+    animation: none !important;
+  }
+  .shadow-warm,
+  .shadow-warm-lg {
+    box-shadow: none !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .min-h-full,
+  .lg\:pl-60 {
+    padding-left: 0 !important;
+  }
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+  tr,
+  li {
+    break-inside: avoid;
+  }
+}
+
+/* Print-only report-card header (grades page) */
+.print-only {
+  display: none;
+}
+@media print {
+  .print-only {
+    display: block;
+  }
+}
+
+/* Digital student ID holographic sheen (Student ID page) */
+.id-hologram::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    color-mix(in oklch, var(--clay) 20%, transparent) 42%,
+    color-mix(in oklch, var(--sage) 16%, transparent) 52%,
+    color-mix(in oklch, var(--warn) 14%, transparent) 62%,
+    transparent 75%
+  );
+  background-size: 220% 100%;
+  animation: holo-drift 7s ease-in-out infinite alternate;
+}
+@keyframes holo-drift {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .id-hologram::after {
+    animation: none;
+  }
 }

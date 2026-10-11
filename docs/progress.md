@@ -1,0 +1,83 @@
+# Build log — Marben student portal (front-end)
+
+Execution record for the plan in `.kilo/plans/1791583114436-marben-student-portal-plan.md`.
+Dates are the work session date; the demo world runs on the fixed reference
+date **2026-10-09** (Friday, Week 8 of Q2).
+
+## Ship checklist (from the plan)
+
+- [x] Landing page (hero + product preview, stats, feature grid, how it works, CTA + footer)
+- [x] Login page (split editorial layout, demo account, redirects to portal)
+- [x] Portal shell: sidebar + topbar + mobile bottom nav + ⌘K command palette
+- [x] Dashboard: greeting, stat tiles, today's classes, upcoming deadlines, announcements
+- [x] Courses + course detail (grades, slots, attendance, assignments)
+- [x] Grades: term selector, subject table, GWA ring + trend, print header (Form 138)
+- [x] Schedule: weekly grid with today highlighted, .ics export
+- [x] Attendance: per-subject rates + daily log
+- [x] Fees: statement of account, payment history, pay dialog
+- [x] Assignments: status filters
+- [x] Announcements, notifications, profile, digital student ID (QR + holographic sheen)
+- [x] Motion kit (`components/motion/`) + portal atoms (`components/portal/`)
+- [x] SEO / OG image, favicon + apple icon
+- [x] README + this log
+- [x] Zero console errors on all audited routes
+- [x] `npx tsc --noEmit && npm run lint && npm run build` green
+
+## Verification commands (run before every ship)
+
+```bash
+npx tsc --noEmit
+npm run lint
+npm run build
+```
+
+## Phase notes
+
+1. **Foundation** — Next 16.4.4 scaffolded via `create-next-app` (renamed into
+   `marben` subfolder then moved to the root; npm rejects the capital-letter
+   directory name). shadcn/ui initialized with the Base UI "nova" preset; its
+   neutral CSS variables were re-mapped onto the Paper & Clay palette in
+   `globals.css`.
+2. **Design language** — Fraunces + Geist via `next/font`; tokens in
+   `@theme`; paper grain; warm shadows; MotionConfig-free reduced-motion
+   gating (components self-gate via a hydration-safe `useSyncExternalStore`
+   hook).
+3. **Motion kit** — `Reveal` and `TextReveal` are pure-CSS scroll-driven
+   animations (zero JS, hydration-free); `Tilt`, `MagneticButton`,
+   `ProgressRing` use framer-motion; `AnimatedCounter` uses rAF.
+4. **Data** — `src/data/student.ts` is a self-consistent dataset: subject
+   grades average to the displayed GWA (91.25), attendance counts add up to
+   97.5%, fees reconcile to ₱2,480.00.
+5. **Cache Components** — the course detail route awaits `params` inside
+   `<Suspense>` per the Next 16 migration guide (Partial Prefetching);
+   `generateMetadata` is cached with `use cache`.
+
+## Known gaps / decisions
+
+- **Lighthouse performance**: measured on the production `next start` server
+  (Lighthouse 13.5, headless Chromium):
+  - Landing — accessibility 100, best-practices 100, SEO 100, CLS 0.
+    Performance **92–93** with real (devtools) throttling, **88–89** with
+    Lighthouse's simulated throttling.
+  - `/portal/dashboard` — accessibility 100, best-practices 100, SEO 100,
+    CLS 0; performance **90** (real throttling).
+  - Desktop simulated performance is lower (**70**) because the desktop LCP
+    curve is stricter.
+  - Observed (unthrottled) FCP/LCP are ~0.37 s; the gap is Lighthouse's
+    4×-CPU simulation over a design-mandated page weight (self-hosted
+    Fraunces + Geist, paper grain, product preview mockup). The ≥95 target is
+    not met on the simulated metric without removing the plan-mandated fonts
+    and grain; removing fonts alone still measured 94.
+- **Font preloads**: Next 16.4 does not emit `next/font` preloads (verified
+  against a minimal repro app). The two latin subsets are hand-preloaded in
+  `src/app/layout.tsx`; the filenames are stable hashes from
+  `.next/server/next-font-manifest.json`.
+- **`display: optional`** on all `next/font` faces: fonts paint with the first
+  content paint or never swap in late (no CLS, no late LCP repaint).
+- **Toaster** (sonner) lives in the portal shell and login page only, keeping
+  toast infrastructure off the marketing landing.
+
+## Not included (front-end scope)
+
+Real authentication, persistence, and multi-role switching (RBAC is
+represented visually). All actions confirm with toasts and are demo-only.
