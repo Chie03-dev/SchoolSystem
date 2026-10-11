@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Demo — The Student Portal Schools Can Call Their Own",
     description:
-      "Grades, attendance, schedules, fees, announcements, and a digital student ID — one calm, offline-friendly portal for Philippine schools.",
+      "Grades, attendance, schedules, fees, announcements, and a digital student ID — one calm portal for Philippine schools.",
   },
 };
 

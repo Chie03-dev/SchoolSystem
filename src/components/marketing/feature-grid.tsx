@@ -1,10 +1,10 @@
 import {
-  Building2,
+  Download,
+  GraduationCap,
+  IdCard,
   LayoutGrid,
   ScrollText,
-  ShieldCheck,
-  Users,
-  WifiOff,
+  FileText,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 
@@ -12,32 +12,32 @@ const features = [
   {
     icon: LayoutGrid,
     title: "Everything in one place",
-    body: "Grades, attendance, class schedules, fees, announcements, and the digital student ID - one login, every record.",
-  },
-  {
-    icon: WifiOff,
-    title: "Offline-friendly PWA",
-    body: "Installable on any phone. Schedules and announcements stay available even when the campus WiFi drops.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Role-based access",
-    body: "Students, parents, teachers, cashiers, guidance, and admins each see exactly what they should - nothing more.",
+    body: "Grades, attendance, class schedules, fees, announcements, and the digital student ID - every student record in one portal.",
   },
   {
     icon: ScrollText,
-    title: "Transparent records",
-    body: "Chronological logs for grades, payments, and excuses. Families can trace every change back to its source.",
+    title: "Chronological records",
+    body: "Daily attendance logs, payment history, and a notification trail - every entry dated and traceable.",
   },
   {
-    icon: Building2,
-    title: "Multi-campus ready",
-    body: "Campuses, strands, sections, and fee schedules configured per outlet - with cashier reconciliation built in.",
+    icon: GraduationCap,
+    title: "DepEd-aligned grading",
+    body: "Term selector, GWA trend, honors remarks on the SHS scale, and a Form 138 print header on the report card view.",
   },
   {
-    icon: Users,
-    title: "Parents included",
-    body: "Guardians follow attendance and balances in real time and approve excuse letters from their own phone.",
+    icon: FileText,
+    title: "Self-service documents",
+    body: "Request Form 138, good moral, or enrollment certificates - each request shows status, ETA, and fee.",
+  },
+  {
+    icon: IdCard,
+    title: "Digital student ID",
+    body: "A QR-ready campus ID with guardian contact and validity, plus a holographic sheen you can toggle.",
+  },
+  {
+    icon: Download,
+    title: "Exports that matter",
+    body: "The weekly schedule downloads as .ics for any calendar app, and report cards and statements are print-ready.",
   },
 ];
 
@@ -45,13 +45,13 @@ export function FeatureGrid() {
   return (
     <section id="features" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-16 sm:py-20">
       <div className="max-w-2xl">
-        <p className="eyebrow">The platform</p>
+        <p className="eyebrow">What&apos;s inside</p>
         <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-          One portal, every school workflow
+          Every student-portal screen, working
         </h2>
         <p className="mt-4 text-ink-muted">
-          Demo replaces the spreadsheet sprawl with a single system of
-          record - designed for the way Philippine schools actually run.
+          A front-end prototype: twelve screens running on a fixed sample
+          dataset - no backend, no real accounts, nothing leaves your browser.
         </p>
       </div>
 

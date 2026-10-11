@@ -3,30 +3,20 @@ import { BrandMark } from "@/components/brand-mark";
 
 const columns = [
   {
-    title: "Product",
+    title: "Portal",
     links: [
       { label: "Student portal", href: "/login" },
-      { label: "Features", href: "#features" },
-      { label: "How it works", href: "#how-it-works" },
+      { label: "What's inside", href: "#features" },
+      { label: "How the demo works", href: "#how-it-works" },
+    ],
+  },
+  {
+    title: "Student views",
+    links: [
+      { label: "Grades & report card", href: "/login" },
+      { label: "Attendance", href: "/login" },
+      { label: "Fees & statement", href: "/login" },
       { label: "Digital student ID", href: "/login" },
-    ],
-  },
-  {
-    title: "Schools",
-    links: [
-      { label: "Book a demo", href: "#demo" },
-      { label: "Multi-campus", href: "#features" },
-      { label: "Parent access", href: "#features" },
-      { label: "Contact", href: "mailto:hello@demo.school" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Help center", href: "#how-it-works" },
-      { label: "Status", href: "#demo" },
-      { label: "Privacy", href: "#demo" },
-      { label: "Terms", href: "#demo" },
     ],
   },
 ];
@@ -44,8 +34,8 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm text-ink-muted">
-              The student information system Philippine schools can call their
-              own. Installable, offline-friendly, and built for every role.
+              A front-end student portal prototype - sample data, no backend,
+              nothing leaves your browser.
             </p>
           </div>
 
@@ -71,7 +61,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6 text-xs text-ink-faint">
-          <p>© 2026 Demo. Built for Philippine schools.</p>
+          <p>© 2026 Demo · Front-end showcase with sample data</p>
           <p>Grades · Attendance · Schedules · Fees · Announcements · Digital ID</p>
         </div>
       </div>

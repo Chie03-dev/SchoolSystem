@@ -69,13 +69,12 @@ export default function OpengraphImage() {
           </div>
           <div style={{ fontSize: 30, color: "#57504A", maxWidth: 780 }}>
             Grades, attendance, schedules, fees, announcements, and a digital
-            student ID - one calm, offline-friendly portal for Philippine
-            schools.
+            student ID - one calm portal for Philippine schools.
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 16, fontSize: 24 }}>
-          {["Student portal", "Parent access", "Teacher tools", "Admin console"].map(
+          {["Student portal", "12 screens", "Sample data", "No backend"].map(
             (item) => (
               <div
                 key={item}

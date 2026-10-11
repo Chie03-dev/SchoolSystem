@@ -3,9 +3,8 @@ import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 
 const links = [
-  { href: "#features", label: "Features" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#schools", label: "Schools" },
+  { href: "#features", label: "What's inside" },
+  { href: "#how-it-works", label: "How the demo works" },
 ];
 
 export function SiteHeader() {
@@ -35,8 +34,8 @@ export function SiteHeader() {
           <Button variant="ghost" size="sm" nativeButton={false} render={<Link href="/login" />}>
             Sign in
           </Button>
-          <Button size="sm" nativeButton={false} render={<a href="#demo" />}>
-            Book a demo
+          <Button size="sm" nativeButton={false} render={<Link href="/login" />}>
+            Open portal
           </Button>
         </div>
       </div>

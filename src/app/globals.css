@@ -293,26 +293,6 @@
   }
 }
 
-/* Marquee - seamless infinite strip (Marquee component) */
-@keyframes marquee-scroll {
-  to {
-    transform: translateX(calc(-50% - var(--marquee-gap, 2rem) / 2));
-  }
-}
-.marquee-track {
-  animation: marquee-scroll var(--marquee-duration, 32s) linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .marquee-viewport {
-    overflow: visible;
-  }
-}
-
 /* Print: light paper surfaces, no grain, reveal content always visible */
 @media print {
   *,

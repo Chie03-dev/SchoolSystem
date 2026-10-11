@@ -1,4 +1,5 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { MagneticButton } from "@/components/motion/magnetic-button";
 import { Reveal } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
@@ -18,14 +19,14 @@ export function CtaBand() {
             }}
           />
           <p className="eyebrow relative text-primary-foreground/80">
-            Get started
+            Front-end demo
           </p>
           <h2 className="font-display relative mx-auto mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-primary-foreground sm:text-4xl">
-            <TextReveal text="Give your school a portal it can be proud of." />
+            <TextReveal text="Take the portal for a spin." />
           </h2>
           <p className="relative mx-auto mt-4 max-w-xl text-primary-foreground/85">
-            Book a 20-minute walkthrough. We&apos;ll set up a demo school with
-            your strands, sections, and fee schedules - no commitment.
+            Every screen runs on a fixed sample dataset. Sign in with any
+            credentials and explore - nothing is sent anywhere.
           </p>
           <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton>
@@ -33,11 +34,9 @@ export function CtaBand() {
                 size="lg"
                 nativeButton={false}
                 className="bg-surface text-clay hover:bg-surface/90"
-                render={
-                  <a href="mailto:hello@demo.school?subject=Demo%20request" />
-                }
+                render={<Link href="/login" />}
               >
-                Book a demo
+                Open the portal
                 <ArrowRight aria-hidden />
               </Button>
             </MagneticButton>
@@ -46,10 +45,9 @@ export function CtaBand() {
               variant="outline"
               nativeButton={false}
               className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              render={<a href="mailto:hello@demo.school" />}
+              render={<a href="#features" />}
             >
-              <Mail aria-hidden />
-              hello@demo.school
+              See what&apos;s inside
             </Button>
           </div>
         </div>

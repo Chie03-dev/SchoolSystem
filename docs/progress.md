@@ -102,7 +102,7 @@ npm run build
   account box are unchanged.
 - **Anonymization pass (post-ship)**: all Marben placeholders were replaced
   with generic "Demo" branding - wordmarks, domain (`demo.school`,
-  `portal.demo.school`, `hello@demo.school`), metadata (title/OG/PWA-ish),
+  `portal.demo.school`, `hello@demo.school`), metadata (title/OG/icons),
   ICS export (PRODID/UID/calname/filename), browser-frame chrome, and the
   letter logo. The logo became a school glyph (lucide `School` in the clay
   tile) shared via `components/brand-mark.tsx`; `icon.svg` and the generated

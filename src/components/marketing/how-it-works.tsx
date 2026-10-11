@@ -1,30 +1,30 @@
-import { ClipboardList, LogIn, Rocket, Settings2 } from "lucide-react";
+import { ClipboardList, LogIn, MousePointerClick, Printer } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 
 const steps = [
   {
-    icon: ClipboardList,
-    title: "Enroll your students",
-    body: "Import or type in strands, sections, subjects, and fee schedules. Demo structures everything for the school year.",
-    meta: "Week 1",
-  },
-  {
-    icon: Settings2,
-    title: "Configure roles",
-    body: "Assign teachers, cashiers, guidance counselors, and admins. Permissions follow your registrar's rules.",
-    meta: "Week 1",
-  },
-  {
     icon: LogIn,
-    title: "Families log in",
-    body: "Students and guardians get portal accounts - installable on any phone, with attendance and fees visible from day one.",
-    meta: "Week 2",
+    title: "Sign in with anything",
+    body: "Any email and password are accepted - there is no real authentication behind this form.",
+    meta: "instant",
   },
   {
-    icon: Rocket,
-    title: "Track the school year",
-    body: "Gradebooks, attendance, collections, and digital IDs keep running themselves. Export Form 138 whenever needed.",
-    meta: "Ongoing",
+    icon: ClipboardList,
+    title: "Tour the screens",
+    body: "Dashboard, courses, grades, schedule, attendance, fees, assignments, announcements, notifications, profile, and the digital ID.",
+    meta: "12 screens",
+  },
+  {
+    icon: MousePointerClick,
+    title: "Click everything",
+    body: "Switches, filters, and dialogs all respond - actions confirm with a toast and change demo state only.",
+    meta: "safe",
+  },
+  {
+    icon: Printer,
+    title: "Print or export",
+    body: "Print the Form 138 report card or the fee statement, or download the weekly schedule as .ics.",
+    meta: "any time",
   },
 ];
 
@@ -36,9 +36,9 @@ export function HowItWorks() {
     >
       <div className="mx-auto max-w-6xl px-5">
         <div className="max-w-2xl">
-          <p className="eyebrow">How it works</p>
+          <p className="eyebrow">How the demo works</p>
           <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Live in one school year, not one semester
+            Four steps, no setup
           </h2>
         </div>
 

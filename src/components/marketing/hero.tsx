@@ -17,23 +17,26 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-xl text-base text-ink-muted sm:text-lg">
             Grades, attendance, schedules, fees, announcements, and a digital
-            student ID - one calm, installable portal for students, parents,
-            teachers, and administrators.
+            student ID - every student-portal screen, built as a working
+            front-end prototype.
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <MagneticButton>
-              <Button nativeButton={false} render={<a href="#demo" />}>
-                Book a demo
+              <Button nativeButton={false} render={<Link href="/login" />}>
+                Explore the portal
                 <ArrowRight aria-hidden />
               </Button>
             </MagneticButton>
-            <Button variant="outline" nativeButton={false} render={<Link href="/login" />}>
-              Explore the portal
+            <Button
+              variant="outline"
+              nativeButton={false}
+              render={<a href="#features" />}
+            >
+              See what&apos;s inside
             </Button>
           </div>
           <p className="mt-4 text-xs text-ink-faint">
-            Works offline once installed · No app store required · Built for PH
-            schools
+            Front-end demo · Fixed sample dataset · No backend or real accounts
           </p>
         </div>
 

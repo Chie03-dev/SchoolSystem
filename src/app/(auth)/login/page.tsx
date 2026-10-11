@@ -10,7 +10,6 @@ import { FadeRise } from "@/components/motion/fade-rise";
 import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Switch } from "@/components/portal/switch";
 import { Toaster } from "@/components/ui/sonner";
 import {
   feeStatement,
@@ -23,7 +22,6 @@ export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(true);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const [loading, setLoading] = useState(false);
 
@@ -101,12 +99,11 @@ export default function LoginPage() {
               {feeStatement.schoolYear} · {schoolWeek}
             </p>
             <p className="font-display mt-6 text-2xl leading-tight font-semibold tracking-tight text-paper sm:text-3xl">
-              One student record the whole family can actually read.
+              One student record, finally readable.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-paper/75">
               Grades, attendance, and fees for {student.gradeLevel}{" "}
-              {student.section} - verified by the adviser, printable for
-              submissions.
+              {student.section} - sample data, printable for submissions.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {[
@@ -151,8 +148,8 @@ export default function LoginPage() {
                 Sign in to the portal
               </h1>
               <p className="mt-1.5 text-sm text-ink-muted">
-                Use your school-issued account to view grades, attendance, fees,
-                and your digital ID.
+                Any email and password are accepted - this is a front-end demo
+                running on sample data.
               </p>
 
               <form className="mt-6 space-y-4" onSubmit={onSubmit} noValidate>
@@ -179,17 +176,9 @@ export default function LoginPage() {
                 </div>
 
                 <div>
-                  <div className="flex items-baseline justify-between">
-                    <label htmlFor="password" className="text-sm font-medium">
-                      Password
-                    </label>
-                    <a
-                      href="#reset"
-                      className="rounded-xs text-xs text-ink-muted underline-offset-2 hover:text-clay-hover hover:underline"
-                    >
-                      Forgot password?
-                    </a>
-                  </div>
+                  <label htmlFor="password" className="text-sm font-medium">
+                    Password
+                  </label>
                   <Input
                     id="password"
                     type="password"
@@ -210,15 +199,6 @@ export default function LoginPage() {
                   ) : null}
                 </div>
 
-                <div className="flex items-center gap-2.5">
-                  <Switch
-                    checked={remember}
-                    onCheckedChange={setRemember}
-                    label="Keep me signed in"
-                  />
-                  <span className="text-sm text-ink-muted">Keep me signed in</span>
-                </div>
-
                 <Button type="submit" className="w-full" disabled={loading}>
                   {loading ? "Signing in…" : "Sign in"}
                 </Button>
@@ -233,8 +213,7 @@ export default function LoginPage() {
                         {student.email}
                       </p>
                       <p className="font-mono text-[11px] text-ink-muted">
-                        Balance shown: {formatPHP(student.balance)} · Q2 grades
-                        live
+                        Sample balance: {formatPHP(student.balance)} · Q2 grades
                       </p>
                     </div>
                     <Button variant="outline" size="sm" onClick={fillDemo}>
@@ -255,11 +234,11 @@ export default function LoginPage() {
               href="/about"
               className="rounded-xs text-clay-hover underline-offset-2 hover:underline"
             >
-              Explore what your school gets
+              See what&apos;s inside
             </Link>
           </p>
           <footer className="mt-3 text-[11px] text-ink-faint">
-            © 2026 Demo · Built for Philippine schools
+            © 2026 Demo · Front-end demo with sample data
           </footer>
         </div>
       </div>
