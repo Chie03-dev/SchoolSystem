@@ -88,7 +88,7 @@ export function FeesView() {
             size="sm"
             onClick={() =>
               toast.success("Statement downloaded", {
-                description: "SOA-2026-0148.pdf — demo only, no file was generated.",
+                description: "SOA-2026-0148.pdf - demo only, no file was generated.",
               })
             }
           >
@@ -285,7 +285,7 @@ export function FeesView() {
               onClick={() => {
                 setPayOpen(false);
                 toast.success("Payment scheduled", {
-                  description: `${formatPHP(feeStatement.balance)} via ${methods.find((m) => m.value === method)!.label} — demo only.`,
+                  description: `${formatPHP(feeStatement.balance)} via ${methods.find((m) => m.value === method)!.label} - demo only.`,
                 });
               }}
             >

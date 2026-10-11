@@ -30,7 +30,7 @@ function firstOccurrence(weekday: Weekday, startDate: Date): Date {
 
 /**
  * Builds a weekly-recurring .ics calendar for the student's class schedule.
- * Times are floating (local) — school calendars shouldn't shift with TZ.
+ * Times are floating (local) - school calendars shouldn't shift with TZ.
  */
 export function buildScheduleIcs(
   schedule: Record<Weekday, ScheduleSlot[]>,
@@ -63,7 +63,7 @@ export function buildScheduleIcs(
           `SUMMARY:${escapeText(summary)}`,
           `LOCATION:${escapeText(slot.room)}`,
           `DESCRIPTION:${escapeText(
-            `Subject ${subject.code} · ${subject.units} units · ${options.studentName} — exported from Marben`
+            `Subject ${subject.code} · ${subject.units} units · ${options.studentName} - exported from Marben`
           )}`,
           "END:VEVENT",
         ].join("\r\n")
@@ -77,7 +77,7 @@ export function buildScheduleIcs(
     "PRODID:-//Marben//Student Portal//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    `X-WR-CALNAME:${escapeText(`${options.studentName} — Class Schedule (Marben)`)}`,
+    `X-WR-CALNAME:${escapeText(`${options.studentName} - Class Schedule (Marben)`)}`,
     ...events,
     "END:VCALENDAR",
   ].join("\r\n");

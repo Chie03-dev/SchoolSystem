@@ -79,7 +79,7 @@ export default function SchedulePage() {
                     if (!slot) {
                       return (
                         <td key={day} className="px-3 py-2.5">
-                          <span className="text-xs text-ink-faint">—</span>
+                          <span className="text-xs text-ink-faint">-</span>
                         </td>
                       );
                     }

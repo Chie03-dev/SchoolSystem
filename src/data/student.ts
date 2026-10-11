@@ -1,7 +1,7 @@
 /**
  * Mock student dataset for the Marben demo portal.
  *
- * All dates are fixed strings around the reference date — never `Date.now()` —
+ * All dates are fixed strings around the reference date - never `Date.now()` -
  * so every render is deterministic and prerenderable.
  */
 
@@ -40,7 +40,7 @@ export const student = {
   gradeLevel: "Grade 11",
   section: "STEM-A",
   adviser: "Ms. Roselle Gonzales",
-  school: "Maben National High School — Main Campus",
+  school: "Maben National High School - Main Campus",
   enrolledSince: "August 12, 2023",
   gwa: 91.25,
   rank: 6,
@@ -89,7 +89,7 @@ export const subjects: Subject[] = [
     units: 1.5,
     category: "Core",
     description:
-      "Principles of effective oral communication across contexts — interviews, debates, and public speaking in English and Filipino.",
+      "Principles of effective oral communication across contexts - interviews, debates, and public speaking in English and Filipino.",
     grades: { q1: 92, q2: 93 },
     attendance: { present: 38, late: 2, absent: 0, total: 40 },
   },
@@ -187,7 +187,7 @@ export const subjects: Subject[] = [
     units: 1,
     category: "Applied",
     description:
-      "Digital productivity suites, online safety, and the ICT capstone project — a working mobile web app prototype.",
+      "Digital productivity suites, online safety, and the ICT capstone project - a working mobile web app prototype.",
     grades: { q1: 91, q2: 87 },
     attendance: { present: 37, late: 2, absent: 1, total: 40 },
   },
@@ -255,14 +255,14 @@ export interface DailyAttendance {
 
 export const attendanceLog: DailyAttendance[] = [
   { date: "2026-10-09", weekday: "Fri", status: "present", detail: "All 5 classes attended" },
-  { date: "2026-10-08", weekday: "Thu", status: "late", detail: "Arrived 8:12 AM — Earth and Life Science" },
+  { date: "2026-10-08", weekday: "Thu", status: "late", detail: "Arrived 8:12 AM - Earth and Life Science" },
   { date: "2026-10-07", weekday: "Wed", status: "present", detail: "All 5 classes attended" },
   { date: "2026-10-06", weekday: "Tue", status: "present", detail: "All 4 classes attended" },
   { date: "2026-10-05", weekday: "Mon", status: "present", detail: "All 5 classes attended" },
-  { date: "2026-10-02", weekday: "Fri", status: "absent", detail: "Excused — medical certificate on file" },
+  { date: "2026-10-02", weekday: "Fri", status: "absent", detail: "Excused - medical certificate on file" },
   { date: "2026-10-01", weekday: "Thu", status: "present", detail: "All 4 classes attended" },
   { date: "2026-09-30", weekday: "Wed", status: "present", detail: "All 5 classes attended" },
-  { date: "2026-09-29", weekday: "Tue", status: "late", detail: "Arrived 9:35 AM — Practical Research 1" },
+  { date: "2026-09-29", weekday: "Tue", status: "late", detail: "Arrived 9:35 AM - Practical Research 1" },
   { date: "2026-09-28", weekday: "Mon", status: "present", detail: "All 5 classes attended" },
 ];
 
@@ -277,9 +277,9 @@ export interface FeeItem {
 export const feeStatement = {
   schoolYear: "SY 2026–2027 · Q2",
   items: [
-    { label: "Tuition — Q2", amount: 18500, due: "Aug 24, 2026", status: "paid" },
+    { label: "Tuition - Q2", amount: 18500, due: "Aug 24, 2026", status: "paid" },
     { label: "Miscellaneous fees", amount: 3240, due: "Aug 24, 2026", status: "paid" },
-    { label: "Laboratory fee — Science", amount: 1200, due: "Sep 30, 2026", status: "partial", note: "₱800 of ₱1,200 settled" },
+    { label: "Laboratory fee - Science", amount: 1200, due: "Sep 30, 2026", status: "partial", note: "₱800 of ₱1,200 settled" },
     { label: "Digital student ID", amount: 350, due: "Oct 15, 2026", status: "pending" },
   ] satisfies FeeItem[],
   payments: [
@@ -308,7 +308,7 @@ export const documentRequests: DocumentRequest[] = [
   {
     id: "REQ-1042",
     document: "Form 138 (Report Card)",
-    purpose: "Scholarship application — CHED StuFAP",
+    purpose: "Scholarship application - CHED StuFAP",
     requestedOn: "Oct 6, 2026",
     status: "processing",
     eta: "Oct 14, 2026",
@@ -388,7 +388,7 @@ export interface Assignment {
 export const assignments: Assignment[] = [
   {
     id: "AS-88",
-    title: "Research proposal — Chapter 1 draft",
+    title: "Research proposal - Chapter 1 draft",
     subjectCode: "PR1-11",
     due: "Oct 13, 2026",
     status: "in-progress",
@@ -405,7 +405,7 @@ export const assignments: Assignment[] = [
   },
   {
     id: "AS-84",
-    title: "Problem set 4 — Exponential functions",
+    title: "Problem set 4 - Exponential functions",
     subjectCode: "GM-11",
     due: "Oct 14, 2026",
     status: "not-started",
@@ -442,7 +442,7 @@ export interface Notification {
 export const notifications: Notification[] = [
   {
     id: "NT-301",
-    title: "Q2 grade posted — Statistics and Probability",
+    title: "Q2 grade posted - Statistics and Probability",
     body: "Mr. Lim published your data gathering journal score: 94/100.",
     time: "2 hours ago",
     read: false,
@@ -450,7 +450,7 @@ export const notifications: Notification[] = [
   },
   {
     id: "NT-300",
-    title: "Payment received — ₱8,810.00",
+    title: "Payment received - ₱8,810.00",
     body: "First installment posted to your account. Remaining balance: ₱2,480.00.",
     time: "Sep 15, 10:24 AM",
     read: false,
@@ -458,7 +458,7 @@ export const notifications: Notification[] = [
   },
   {
     id: "NT-297",
-    title: "Excuse approved — Oct 2 absence",
+    title: "Excuse approved - Oct 2 absence",
     body: "Ms. Gonzales approved the medical certificate for your Oct 2 absence.",
     time: "Oct 3, 8:05 AM",
     read: true,
@@ -474,7 +474,7 @@ export const notifications: Notification[] = [
   },
   {
     id: "NT-290",
-    title: "Schedule change — Friday homeroom",
+    title: "Schedule change - Friday homeroom",
     body: "Homeroom on Fridays moved to 4:00 PM at Room 118.",
     time: "Sep 28, 9:00 AM",
     read: true,

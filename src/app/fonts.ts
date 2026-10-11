@@ -1,25 +1,13 @@
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 
 /**
- * Editorial type. `display: "optional"` means fonts paint with the first
- * content paint when they arrive within the block period, and otherwise never
- * swap in late — no layout shift, no delayed LCP repaint.
+ * Universal type family. Inter handles every role — body, UI, display, and
+ * tabular data (via `tabular-nums`) — for one coherent, institutional look.
+ * `display: "optional"` paints the real face at first content paint or not
+ * at all (no late swap, no layout shift).
  */
-export const fontSans = Geist({
+export const fontSans = Inter({
   variable: "--font-sans",
-  subsets: ["latin"],
-  display: "optional",
-});
-
-export const fontMono = Geist_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "optional",
-  preload: false,
-});
-
-export const fontDisplay = Fraunces({
-  variable: "--font-display",
   subsets: ["latin"],
   display: "optional",
 });

@@ -1,4 +1,4 @@
-/** Keyboard skip link — visible only when focused. */
+/** Keyboard skip link - visible only when focused. */
 export function SkipLink({
   targetId = "main-content",
   label = "Skip to content",

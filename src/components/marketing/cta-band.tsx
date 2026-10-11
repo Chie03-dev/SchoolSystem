@@ -25,7 +25,7 @@ export function CtaBand() {
           </h2>
           <p className="relative mx-auto mt-4 max-w-xl text-primary-foreground/85">
             Book a 20-minute walkthrough. We&apos;ll set up a demo school with
-            your strands, sections, and fee schedules — no commitment.
+            your strands, sections, and fee schedules - no commitment.
           </p>
           <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * Campus photo card for the login page — shows the school's building and
+ * Campus photo card for the login page - shows the school's building and
  * grounds with a caption scrim.
  */
 export function SchoolPhoto({ className }: { className?: string }) {
@@ -15,7 +15,7 @@ export function SchoolPhoto({ className }: { className?: string }) {
     >
       <Image
         src="/school.jpg"
-        alt="Maben National High School — main campus building and grounds"
+        alt="Maben National High School - main campus building and grounds"
         width={1200}
         height={900}
         sizes="(max-width: 1024px) 100vw, 420px"

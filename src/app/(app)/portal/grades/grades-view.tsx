@@ -28,7 +28,7 @@ export function GradesView() {
       <div className="print-only">
         <p className="font-display text-xl font-semibold">{student.school}</p>
         <p className="text-sm">
-          Form 138 — Learner&apos;s Progress Report Card · {activeTerm.label} ·
+          Form 138 - Learner&apos;s Progress Report Card · {activeTerm.label} ·
           SY 2026–2027
         </p>
         <p className="text-sm text-ink-muted">
@@ -60,7 +60,7 @@ export function GradesView() {
             size="sm"
             onClick={() =>
               toast.success("Report card ready", {
-                description: "Form 138 (Q1) exported as PDF — demo only.",
+                description: "Form 138 (Q1) exported as PDF - demo only.",
               })
             }
           >

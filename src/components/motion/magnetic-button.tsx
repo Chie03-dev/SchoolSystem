@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const SPRING = { stiffness: 250, damping: 18 } as const;
 
 /**
- * Magnetic hover wrapper for primary CTAs — the content drifts toward the
+ * Magnetic hover wrapper for primary CTAs - the content drifts toward the
  * cursor. Mouse only; disabled under prefers-reduced-motion.
  */
 export function MagneticButton({

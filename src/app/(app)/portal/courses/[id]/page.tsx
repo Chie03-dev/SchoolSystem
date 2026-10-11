@@ -148,7 +148,7 @@ async function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
                 {[...new Set(slots.map((slot) => slot.day))].join(" · ")}
                 {slots.length > 0
                   ? ` · ${formatTime(Number(slots[0].start.split(":")[0]), Number(slots[0].start.split(":")[1]))}`
-                  : " · —"}
+                  : " · -"}
               </p>
             </div>
           </div>
@@ -177,7 +177,7 @@ async function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
                   {formatGrade(entry.value)}
                 </p>
                 <p className="mt-1 text-xs text-ink-muted">
-                  {entry.value !== null ? remarksForGrade(entry.value) : "—"} · {entry.note}
+                  {entry.value !== null ? remarksForGrade(entry.value) : "-"} · {entry.note}
                 </p>
               </div>
             ))}

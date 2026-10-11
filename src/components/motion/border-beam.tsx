@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Traveling accent light along a card's border. Purely decorative — the
+ * Traveling accent light along a card's border. Purely decorative - the
  * animation is disabled under prefers-reduced-motion via CSS.
  */
 export function BorderBeam({

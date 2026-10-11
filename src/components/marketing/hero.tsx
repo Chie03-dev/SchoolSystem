@@ -17,7 +17,7 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-xl text-base text-ink-muted sm:text-lg">
             Grades, attendance, schedules, fees, announcements, and a digital
-            student ID — one calm, installable portal for students, parents,
+            student ID - one calm, installable portal for students, parents,
             teachers, and administrators.
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-3">

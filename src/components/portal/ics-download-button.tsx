@@ -27,7 +27,7 @@ export function IcsDownloadButton() {
         anchor.remove();
         URL.revokeObjectURL(url);
         toast.success("Schedule exported", {
-          description: "marben-class-schedule.ics — import it into any calendar app.",
+          description: "marben-class-schedule.ics - import it into any calendar app.",
         });
       }}
     >

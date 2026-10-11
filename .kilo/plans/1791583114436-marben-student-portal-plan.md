@@ -1,4 +1,4 @@
-# Marben — Sellable Student Portal (Frontend-Only Showcase)
+# Marben - Sellable Student Portal (Frontend-Only Showcase)
 
 ## Objective
 Plan a new frontend-only student-side school system, branded **"Marben"**, with premium UI/UX inspired by 21st.dev and modern architecture, to sell to school clients: a cinematic editorial landing page plus a calm, real student portal. Philippine DepEd context, English copy, static mock data, no backend. All "live" behavior (save attendance, pay fees, toggle switches) uses ephemeral React state + toasts.
@@ -20,7 +20,7 @@ Plan a new frontend-only student-side school system, branded **"Marben"**, with 
 | Copy | English only |
 | Typography | Serif display (Fraunces) + sans UI (Geist) |
 
-## Design Language — "Paper & Clay" (Warm Editorial)
+## Design Language - "Paper & Clay" (Warm Editorial)
 Tokens to define in Tailwind v4 `@theme` (`src/app/globals.css`):
 
 - `--paper: #FAF7F1` (page bg), `--surface: #FFFFFF`, `--surface-2: #F4EFE6` (alt rows/panels)
@@ -56,7 +56,7 @@ src/
   lib/{cn,format,grades,ics}.ts
 public/ (logos, og image, texture)
 ```
-- Data persona (deterministic, no `Date.now()` at module scope — SSR/hydration safe): **Althea M. Reyes**, Grade 11 – STEM, Section A, LRN 136004120087. Use a fixed reference date constant in `src/data/marben/student.ts`.
+- Data persona (deterministic, no `Date.now()` at module scope - SSR/hydration safe): **Althea M. Reyes**, Grade 11 – STEM, Section A, LRN 136004120087. Use a fixed reference date constant in `src/data/marben/student.ts`.
 - ~11 static routes total.
 
 ## Module Specs
@@ -72,23 +72,23 @@ public/ (logos, og image, texture)
 - **Digital ID**: front/back card, 3D flip, QR placeholder, "Add to Wallet" demo.
 
 ## Landing Sections
-1. **Hero** — eyebrow, serif headline, sub, dual CTA; animated product preview in a `BrowserFrame` (dashboard mock animating in, `BorderBeam` accent).
-2. **Social proof** — `AnimatedCounter` stats (schools, students, attendance rate, on-time), logo-style wordmarks.
-3. **Feature grid** — 8–10 module cards with icons, hover lift, `Marquee` strip optionally.
-4. **How it works** — 3 steps, editorial numbers, connecting timeline.
-5. **Final CTA + footer** — full-width clay/ink band, nav columns, fine print.
+1. **Hero** - eyebrow, serif headline, sub, dual CTA; animated product preview in a `BrowserFrame` (dashboard mock animating in, `BorderBeam` accent).
+2. **Social proof** - `AnimatedCounter` stats (schools, students, attendance rate, on-time), logo-style wordmarks.
+3. **Feature grid** - 8–10 module cards with icons, hover lift, `Marquee` strip optionally.
+4. **How it works** - 3 steps, editorial numbers, connecting timeline.
+5. **Final CTA + footer** - full-width clay/ink band, nav columns, fine print.
 
 ## Implementation Plan (ordered, gated)
 
 **Gate for every phase:** `npx tsc --noEmit && npm run lint && npm run build` passes, zero console errors, keyboard navigable, AA contrast on paper, Lighthouse ≥95, reduced-motion honored, mobile (390px) verified.
 
-- **Phase 0 — Scaffold & design language.** create-next-app (TS, Tailwind v4, App Router, ESLint); init shadcn/ui + core primitives (button, card, input, badge, dropdown-menu, dialog, table, tabs, avatar, progress, sonner, skeleton); add framer-motion, lucide-react, `cn` util; load Fraunces + Geist via next/font; define all `@theme` tokens above in `globals.css`; paper-grain utility; base layout + `providers.tsx` with `MotionConfig reducedMotion="user"`; empty `(marketing)` + `(app)/portal` route-group layouts. **Done when:** build passes and a token swatch page (temporary route or story page) renders the palette/type/fonts correctly at 390px.
-- **Phase 1 — Primitives & motion kit.** Build `motion/` kit + portal/UI atoms (stat card, progress ring, status chip, segmented control, timeline, toast wiring, switch). **Done when:** kit used by a temp page; reduced-motion disables animation.
-- **Phase 2 — Marketing landing.** Build the 5 sections; wire metadata/OG. **Done when:** full landing passes the gate and cinematic scroll animation works with reduced-motion fallback.
-- **Phase 3 — Login + portal shell + dashboard.** `login/page.tsx` (demo switcher), `portal/layout.tsx` (sidebar + topbar + mobile bottom nav, active states), dashboard sections from mock data. **Done when:** login → dashboard flow works client-side; shell responsive.
-- **Phase 4 — Portal modules.** Courses + `courses/[id]`, Grades + report card, Schedule + ICS, Attendance, Fees, Assignments, Announcements, Digital ID (3D flip), ⌘K palette. **Done when:** all ~11 routes render from mock data and pass the gate.
-- **Phase 5 — Cross-cutting polish.** Responsiveness (375/390/768/1280/1536), keyboard/flocus states, print CSS for report card + ID, empty/edge states, reduced-motion pass, Lighthouse ≥95 on landing.
-- **Phase 6 — Ship artifacts.** SEO metadata/OG image, favicon/logo set, README (product + Phase instructions + stack), `.env.example` (none needed — note "no backend"), `npm run build` final verification.
+- **Phase 0 - Scaffold & design language.** create-next-app (TS, Tailwind v4, App Router, ESLint); init shadcn/ui + core primitives (button, card, input, badge, dropdown-menu, dialog, table, tabs, avatar, progress, sonner, skeleton); add framer-motion, lucide-react, `cn` util; load Fraunces + Geist via next/font; define all `@theme` tokens above in `globals.css`; paper-grain utility; base layout + `providers.tsx` with `MotionConfig reducedMotion="user"`; empty `(marketing)` + `(app)/portal` route-group layouts. **Done when:** build passes and a token swatch page (temporary route or story page) renders the palette/type/fonts correctly at 390px.
+- **Phase 1 - Primitives & motion kit.** Build `motion/` kit + portal/UI atoms (stat card, progress ring, status chip, segmented control, timeline, toast wiring, switch). **Done when:** kit used by a temp page; reduced-motion disables animation.
+- **Phase 2 - Marketing landing.** Build the 5 sections; wire metadata/OG. **Done when:** full landing passes the gate and cinematic scroll animation works with reduced-motion fallback.
+- **Phase 3 - Login + portal shell + dashboard.** `login/page.tsx` (demo switcher), `portal/layout.tsx` (sidebar + topbar + mobile bottom nav, active states), dashboard sections from mock data. **Done when:** login → dashboard flow works client-side; shell responsive.
+- **Phase 4 - Portal modules.** Courses + `courses/[id]`, Grades + report card, Schedule + ICS, Attendance, Fees, Assignments, Announcements, Digital ID (3D flip), ⌘K palette. **Done when:** all ~11 routes render from mock data and pass the gate.
+- **Phase 5 - Cross-cutting polish.** Responsiveness (375/390/768/1280/1536), keyboard/flocus states, print CSS for report card + ID, empty/edge states, reduced-motion pass, Lighthouse ≥95 on landing.
+- **Phase 6 - Ship artifacts.** SEO metadata/OG image, favicon/logo set, README (product + Phase instructions + stack), `.env.example` (none needed - note "no backend"), `npm run build` final verification.
 
 ## Verification
 - `npx tsc --noEmit && npm run lint && npm run build` after each phase
@@ -103,10 +103,10 @@ public/ (logos, og image, texture)
 - DepEd accuracy is presentational only (sample grades/schedule), not official compliance work.
 
 ## Risks & Mitigations
-- **Tailwind v4 alpha drift** — pin versions from `create-next-app` output; do not hand-migrate v3 config; tokens defined in `@theme` only.
-- **Hydration mismatch** — no `Date.now()`/random at module scope; fixed reference date in `student.ts`; `"use client"` only where needed.
-- **Motion perf** — animate `transform`/`opacity` only; disable heavy blur/tilt on reduced-motion + touch; `content-visibility` on long lists.
-- **Scope creep (beehiiv-esque extra sections)** — landing limited to the 5 agreed sections.
+- **Tailwind v4 alpha drift** - pin versions from `create-next-app` output; do not hand-migrate v3 config; tokens defined in `@theme` only.
+- **Hydration mismatch** - no `Date.now()`/random at module scope; fixed reference date in `student.ts`; `"use client"` only where needed.
+- **Motion perf** - animate `transform`/`opacity` only; disable heavy blur/tilt on reduced-motion + touch; `content-visibility` on long lists.
+- **Scope creep (beehiiv-esque extra sections)** - landing limited to the 5 agreed sections.
 
 ## Open Questions (answer during Phase 0 if user is unavailable)
 - None blocking. Defaults: login accepts any credentials; demo switcher also signs in; role persistence via `sessionStorage`; deploy target assumed Vercel.

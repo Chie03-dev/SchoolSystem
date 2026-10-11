@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { fontDisplay, fontMono, fontSans } from "./fonts";
+import { fontSans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,26 +29,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${fontSans.variable} ${fontMono.variable} ${fontDisplay.variable} h-full antialiased`}
+      className={`${fontSans.variable} h-full antialiased`}
     >
       <head>
         {/*
           Next 16.4 does not emit font preloads for next/font (verified against a
-          minimal repro). These two latin subsets are hand-preloaded so text
-          paints with the real faces instead of swapping in late.
+          minimal repro). The latin subset is hand-preloaded so text paints with
+          the real face at first content paint.
           Filenames come from .next/server/next-font-manifest.json — update them
           if the font files change.
         */}
         <link
           rel="preload"
-          href="/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2"
+          href="/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

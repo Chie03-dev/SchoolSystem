@@ -8,7 +8,7 @@ import { StatsStrip } from "@/components/marketing/stats-strip";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Marben — The Student Portal Schools Can Call Their Own",
+    absolute: "Marben - The Student Portal Schools Can Call Their Own",
   },
   description:
     "Grades, attendance, schedules, fees, announcements, and a digital student ID in one calm, offline-friendly portal for Philippine schools.",

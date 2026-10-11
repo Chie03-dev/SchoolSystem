@@ -12,7 +12,7 @@ const features = [
   {
     icon: LayoutGrid,
     title: "Everything in one place",
-    body: "Grades, attendance, class schedules, fees, announcements, and the digital student ID — one login, every record.",
+    body: "Grades, attendance, class schedules, fees, announcements, and the digital student ID - one login, every record.",
   },
   {
     icon: WifiOff,
@@ -22,7 +22,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Role-based access",
-    body: "Students, parents, teachers, cashiers, guidance, and admins each see exactly what they should — nothing more.",
+    body: "Students, parents, teachers, cashiers, guidance, and admins each see exactly what they should - nothing more.",
   },
   {
     icon: ScrollText,
@@ -32,7 +32,7 @@ const features = [
   {
     icon: Building2,
     title: "Multi-campus ready",
-    body: "Campuses, strands, sections, and fee schedules configured per outlet — with cashier reconciliation built in.",
+    body: "Campuses, strands, sections, and fee schedules configured per outlet - with cashier reconciliation built in.",
   },
   {
     icon: Users,
@@ -51,7 +51,7 @@ export function FeatureGrid() {
         </h2>
         <p className="mt-4 text-ink-muted">
           Marben replaces the spreadsheet sprawl with a single system of
-          record — designed for the way Philippine schools actually run.
+          record - designed for the way Philippine schools actually run.
         </p>
       </div>
 

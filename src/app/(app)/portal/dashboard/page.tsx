@@ -219,7 +219,7 @@ export default function DashboardPage() {
                   <span className="font-semibold text-ink">2 lates</span> · 1
                   excused absence
                 </p>
-                <p className="mt-1 text-xs">Keep it up — no unexcused absences.</p>
+                <p className="mt-1 text-xs">Keep it up - no unexcused absences.</p>
               </div>
             </div>
           </Reveal>

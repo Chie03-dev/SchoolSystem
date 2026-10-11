@@ -10,7 +10,7 @@ const EASE = (t: number) => 1 - Math.pow(1 - t, 3); // easeOutCubic
 /**
  * Counts up to `value` when scrolled into view. SSR renders the final
  * formatted value (hydration-safe); reduced motion skips the count-up.
- * Count-up uses requestAnimationFrame — no animation library.
+ * Count-up uses requestAnimationFrame - no animation library.
  */
 export function AnimatedCounter({
   value,

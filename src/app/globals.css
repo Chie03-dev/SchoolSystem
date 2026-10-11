@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Marben — "Paper & Clay" editorial design language.
+ * Marben - "Paper & Clay" editorial design language.
  * Editorial tokens below are the single source of truth; the shadcn
  * variable names are mapped onto them so ui/ components inherit the
  * warm palette instead of their stock neutral values.
@@ -142,14 +142,14 @@
   --color-viz-teal-deep: var(--viz-teal-deep);
   --color-viz-plum: var(--viz-plum);
 
-  /* Typography */
+  /* Typography — one universal family (Inter) for every role */
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-display: var(--font-display);
-  --font-heading: var(--font-display);
+  --font-mono: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-heading: var(--font-sans);
 }
 
-/* Warm-tinted soft shadows — never pure black */
+/* Warm-tinted soft shadows - never pure black */
 @theme {
   --shadow-warm:
     0 1px 2px rgb(28 25 23 / 0.05), 0 4px 12px rgb(28 25 23 / 0.06);
@@ -157,11 +157,12 @@
     0 2px 4px rgb(28 25 23 / 0.05), 0 12px 32px rgb(28 25 23 / 0.09);
 }
 
-/* Fluid editorial display size (hero) */
+/* Fluid display size (hero) — Inter needs tighter tracking at display sizes */
 @utility text-display {
-  font-size: clamp(2.5rem, 1.5rem + 4.5vw, 5rem);
-  line-height: 1.03;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 1.5rem + 4.5vw, 4.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+  font-weight: 600;
 }
 
 /* Small editorial label above headings */
@@ -173,7 +174,7 @@
   color: var(--clay-hover);
 }
 
-/* Subtle paper grain — dithered dot grids painted on the body background
+/* Subtle paper grain - dithered dot grids painted on the body background
    itself (no fixed overlay layer, so it costs nothing to composite). */
 @utility paper-grain {
   background-image:
@@ -246,7 +247,7 @@
   }
 }
 
-/* Border beam — traveling accent light (BorderBeam component) */
+/* Border beam - traveling accent light (BorderBeam component) */
 @property --beam-angle {
   syntax: "<angle>";
   inherits: true;
@@ -292,7 +293,7 @@
   }
 }
 
-/* Marquee — seamless infinite strip (Marquee component) */
+/* Marquee - seamless infinite strip (Marquee component) */
 @keyframes marquee-scroll {
   to {
     transform: translateX(calc(-50% - var(--marquee-gap, 2rem) / 2));

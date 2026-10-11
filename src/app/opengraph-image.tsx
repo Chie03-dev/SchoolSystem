@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Marben — the student portal your school can call its own";
+export const alt = "Marben - the student portal your school can call its own";
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
           </div>
           <div style={{ fontSize: 30, color: "#57504A", maxWidth: 780 }}>
             Grades, attendance, schedules, fees, announcements, and a digital
-            student ID — one calm, offline-friendly portal for Philippine
+            student ID - one calm, offline-friendly portal for Philippine
             schools.
           </div>
         </div>

@@ -120,7 +120,7 @@ export function PortalTopbar({ onOpenPalette }: { onOpenPalette: () => void }) {
             <DropdownMenuItem
               onClick={() => {
                 toast.success("Signed out", {
-                  description: "This was a demo session — no data was stored.",
+                  description: "This was a demo session - no data was stored.",
                 });
                 router.push("/");
               }}

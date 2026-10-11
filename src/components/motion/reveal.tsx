@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Scroll-triggered fade + rise. Pure CSS scroll-driven animation
- * (`animation-timeline: view()`) — zero JS, hydration-free, and static under
+ * (`animation-timeline: view()`) - zero JS, hydration-free, and static under
  * prefers-reduced-motion and in print.
  */
 export function Reveal({

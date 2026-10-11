@@ -68,7 +68,7 @@ export function formatMonthDay(date: Date): string {
   return monthDay.format(date);
 }
 
-/** "7:30 AM" — schedule times are stored as plain strings in mock data. */
+/** "7:30 AM" - schedule times are stored as plain strings in mock data. */
 export function formatTime(hour: number, minute = 0): string {
   const suffix = hour < 12 ? "AM" : "PM";
   const h12 = hour % 12 === 0 ? 12 : hour % 12;

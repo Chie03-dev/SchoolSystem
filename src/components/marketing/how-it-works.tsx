@@ -17,7 +17,7 @@ const steps = [
   {
     icon: LogIn,
     title: "Families log in",
-    body: "Students and guardians get portal accounts — installable on any phone, with attendance and fees visible from day one.",
+    body: "Students and guardians get portal accounts - installable on any phone, with attendance and fees visible from day one.",
     meta: "Week 2",
   },
   {

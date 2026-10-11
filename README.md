@@ -1,10 +1,11 @@
-# Marben — Student Information System (front-end showcase)
+# Marben - Student Information System (front-end showcase)
 
 A sellable, front-end-only student portal for Philippine schools, built on the
 **Paper & Clay** editorial design language: warm paper backgrounds, clay
-accents, Fraunces display type, and a Geist UI face.
+accents, and a single Inter family for every typographic role (body, UI,
+display, tabular data).
 
-The app is a polished **product front-end** — every screen is driven by a
+The app is a polished **product front-end** - every screen is driven by a
 deterministic mock dataset (`src/data/student.ts`), no backend required.
 Perfect for demos, pitch decks, and design reviews.
 
@@ -16,7 +17,7 @@ Perfect for demos, pitch decks, and design reviews.
 | UI kit     | shadcn/ui (Base UI, "nova" preset) + Tailwind CSS v4 |
 | Motion     | framer-motion + CSS scroll-driven reveals          |
 | Icons      | lucide-react                                       |
-| Fonts      | Fraunces (display), Geist (UI), Geist Mono — self-hosted via `next/font` |
+| Fonts      | Inter (one variable family) - self-hosted via `next/font`            |
 | Language   | TypeScript (strict), ESLint                        |
 
 ## Quick start
@@ -36,7 +37,7 @@ npm run build      # production build + prerender
 
 ## Demo login
 
-`/login` — demo credentials are pre-filled in the panel (any values submit):
+`/login` - demo credentials are pre-filled in the panel (any values submit):
 
 ```
 althea.delacruz@student.marben.school
@@ -114,8 +115,13 @@ src/
   date `2026-10-09` (Week 8 of Quarter 2) so every render is identical and
   prerenderable.
 - **Fonts**: `next/font` preloads are not emitted by Next 16.4 (verified
-  against a minimal repro), so the two latin subsets are hand-preloaded in
-  `src/app/layout.tsx`. If the font files change, refresh the hashed filenames
+  against a minimal repro), so the single latin subset is hand-preloaded in
+  `src/app/layout.tsx`. If the font files change, refresh the hashed filename
   from `.next/server/next-font-manifest.json`.
+- **Typography**: one universal family (Inter, `display: "optional"`).
+  Hierarchy comes from weight (600 display, semibold card/dialog titles),
+  size (`text-display` clamp), tracking (-0.032em on display), and
+  `tabular-nums` on data; `font-display`/`font-heading`/`font-mono` remain as
+  semantic aliases of `var(--font-sans)`.
 - Lighthouse: accessibility / best-practices / SEO are 100 and CLS is 0 on both
   audited routes; performance is documented in `docs/progress.md`.
