@@ -56,3 +56,9 @@ desktop.ini
 /test-results/
 /playwright-report/
 .lighthouseci/
+
+# cloudflare workers (opennext)
+/.open-next/
+/.wrangler/
+/.dev.vars
+cloudflare-env.d.ts

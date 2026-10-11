@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "demo-student-portal",
+  "compatibility_date": "2026-10-11",
+  "compatibility_flags": [
+    // Enable Node.js APIs in the Workers runtime.
+    "nodejs_compat",
+    // Allow fetching URLs in your app.
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      // Must match the "name" of this worker.
+      "service": "demo-student-portal"
+    }
+  ]
+}

@@ -135,12 +135,15 @@ src/
 │  └─ (app)/portal/           # portal shell + all portal routes
 ├─ components/
 │  ├─ ui/                     # shadcn primitives
-│  ├─ motion/                 # Reveal, TextReveal, AnimatedCounter, BorderBeam,
-│  │                          #   Tilt, BrowserFrame, Marquee, ProgressRing, MagneticButton
+│  ├─ motion/                 # Reveal, TextReveal, BorderBeam, Tilt, BrowserFrame,
+│  │                          #   ProgressRing, MagneticButton, FadeRise
 │  ├─ portal/                 # portal atoms + shell (sidebar, topbar, ⌘K palette…)
 │  └─ marketing/              # landing sections
 ├─ data/student.ts            # the mock dataset (fixed reference date 2026-10-09)
-└─ lib/                       # cn, format (PHP/dates), grades (DepEd scale), ics
+├─ lib/                       # cn, format (PHP/dates), grades (DepEd scale), ics
+├─ public/                    # school.jpg, _headers (edge cache rules)
+├─ screenshots/               # README showcase captures
+└─ wrangler.jsonc             # Cloudflare Workers config
 ```
 
 ## Notes
@@ -160,3 +163,36 @@ src/
 - Lighthouse: accessibility / best-practices / SEO are 100 and CLS is 0 on both
   audited routes; performance is 88-93 on production builds with real
   throttling.
+
+## Deploy (Cloudflare Workers)
+
+The app is a real Next.js server app, so it deploys to **Cloudflare Workers**
+via [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare) - not to
+static hosting. GitHub Actions builds and deploys on every push to `master`:
+
+1. Create a Cloudflare API token (template: *Edit Cloudflare Workers*).
+2. Add two repository secrets - `CLOUDFLARE_API_TOKEN` and
+   `CLOUDFLARE_ACCOUNT_ID`. Until both exist the workflow skips the deploy and
+   stays green.
+3. Push to `master` (or run the workflow manually). The worker publishes to
+   `https://demo-student-portal.<your-subdomain>.workers.dev`.
+
+Local commands (after `npm install`):
+
+```bash
+npm run build:worker   # patch adapter + build Next + transform to a Worker
+npm run preview        # serve the Worker locally on :8787
+```
+
+Notes:
+
+- `scripts/patch-opennext.mjs` applies upstream fix
+  [opennextjs#1356](https://github.com/opennextjs/opennextjs-cloudflare/pull/1356)
+  (Next 16.4 `preview-props.json` manifest) on every build; delete it once the
+  adapter ships the fix.
+- Local preview needs WSL or Linux - the OpenNext runtime is unsupported on
+  Windows and can hang there. Development itself is plain `npm run dev`.
+- `next/image` runs `unoptimized` (Cloudflare Images is a paid feature); the
+  only image is a 216 KB photo.
+- After the first deploy, update `metadataBase` in `src/app/layout.tsx` to the
+  live `workers.dev` (or custom) domain so OG and canonical URLs resolve.

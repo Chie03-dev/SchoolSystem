@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // OpenNext build output (mirrors the Next build).
+    ".open-next/**",
+    // Wrangler local runtime scratch dir.
+    ".wrangler/**",
   ]),
 ]);
 
