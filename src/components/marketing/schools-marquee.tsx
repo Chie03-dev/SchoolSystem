@@ -1,14 +1,14 @@
 import { Marquee } from "@/components/motion/marquee";
 
 const schools = [
-  "Sto. Niño Academy",
-  "Maben National High School",
-  "DepEd Region IV-A",
-  "Camarines Norte STEM",
-  "San Isidro Institute",
-  "Batangas Science High",
-  "Laguna Crest School",
-  "Holy Cross of Antipolo",
+  "Sample High School",
+  "Demo Academy",
+  "Sample Science High School",
+  "Sample Institute of Technology",
+  "Sample National High School",
+  "Sample City College",
+  "Sample Montessori School",
+  "Sample International School",
 ];
 
 export function SchoolsMarquee() {

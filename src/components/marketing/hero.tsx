@@ -39,7 +39,7 @@ export function Hero() {
 
         <div className="relative mt-10 sm:mt-14">
           <div className="rounded-xl shadow-warm-lg">
-            <BrowserFrame url="portal.marben.school/dashboard">
+            <BrowserFrame url="portal.demo.school/dashboard">
               <PortalPreview />
             </BrowserFrame>
           </div>

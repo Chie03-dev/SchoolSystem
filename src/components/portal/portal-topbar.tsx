@@ -54,7 +54,7 @@ export function PortalTopbar({ onOpenPalette }: { onOpenPalette: () => void }) {
             M
           </span>
           <span className="font-display text-base leading-none font-semibold tracking-tight">
-            Marben
+            Demo
           </span>
         </Link>
 

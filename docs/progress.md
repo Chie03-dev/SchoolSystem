@@ -1,4 +1,4 @@
-# Build log - Marben student portal (front-end)
+# Build log - Demo student portal (front-end)
 
 Execution record for the plan in `.kilo/plans/1791583114436-marben-student-portal-plan.md`.
 Dates are the work session date; the demo world runs on the fixed reference
@@ -49,7 +49,7 @@ npm run build
    `ProgressRing` use framer-motion; `AnimatedCounter` uses rAF.
 4. **Data** - `src/data/student.ts` is a self-consistent dataset: subject
    grades average to the displayed GWA (91.25), attendance counts add up to
-   97.5%, fees reconcile to ₱2,480.00.
+   97.5%, fees reconcile to ₱3,000.00.
 5. **Cache Components** - the course detail route awaits `params` inside
    `<Suspense>` per the Next 16 migration guide (Partial Prefetching);
    `generateMetadata` is cached with `use cache`.
@@ -100,6 +100,22 @@ npm run build
   to a photo banner. Staged entrance via the new `FadeRise` motion primitive
   (framer-motion, reduced-motion safe); form logic, validation, and the demo
   account box are unchanged.
+- **Anonymization pass (post-ship)**: all Marben placeholders were replaced
+  with generic "Demo" branding - wordmarks, domain (`demo.school`,
+  `portal.demo.school`, `hello@demo.school`), metadata (title/OG/PWA-ish),
+  ICS export (PRODID/UID/calname/filename), browser-frame chrome, and the
+  letter logo. The logo became a school glyph (lucide `School` in the clay
+  tile) shared via `components/brand-mark.tsx`; `icon.svg` and the generated
+  `apple-icon.png` were rebuilt from it and the letter-based `favicon.ico`
+  was removed (the SVG icon is the single source). Dataset specifics are now
+  placeholders: student "Juan Dela Cruz", LRN 123456789012, DEMO-2026-0001,
+  zeroed phone numbers, sample address, "Guardian Name", adviser
+  "Ms. Jane Doe", school "Demo High School - Main Campus", round fee
+  amounts (₱16,500 billed / ₱13,500 paid / ₱3,000 balance), OR-0001/OR-0002
+  receipts, REQ-001..003 requests, and generic marquee school names. Usage
+  stats are round (100 schools, 50,000 students, ₱1M/month). The fixed demo
+  calendar (SY 2026-2027, reference date 2026-10-09) is kept because every
+  screen derives from it.
 - **Toaster** (sonner) lives in the portal shell and login page only, keeping
   toast infrastructure off the marketing landing.
 

@@ -15,7 +15,7 @@ export function SchoolPhoto({ className }: { className?: string }) {
     >
       <Image
         src="/school.jpg"
-        alt="Maben National High School - main campus building and grounds"
+        alt="Sample high school main campus building and grounds"
         width={1200}
         height={900}
         sizes="(max-width: 1024px) 100vw, 420px"
@@ -27,11 +27,9 @@ export function SchoolPhoto({ className }: { className?: string }) {
       />
       <div className="absolute inset-x-0 bottom-0 p-3.5">
         <p className="font-display text-sm leading-tight font-semibold text-primary-foreground">
-          Maben National High School
+          Sample High School
         </p>
-        <p className="text-xs text-primary-foreground/80">
-          Main Campus · Quezon City
-        </p>
+        <p className="text-xs text-primary-foreground/80">Main Campus</p>
       </div>
     </div>
   );

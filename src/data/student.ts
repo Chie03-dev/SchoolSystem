@@ -1,5 +1,5 @@
 /**
- * Mock student dataset for the Marben demo portal.
+ * Mock student dataset for the demo portal.
  *
  * All dates are fixed strings around the reference date - never `Date.now()` -
  * so every render is deterministic and prerenderable.
@@ -27,35 +27,35 @@ export const terms: Term[] = [
 ];
 
 export const student = {
-  id: "MAB-2026-0148",
-  lrn: "136482950173",
-  firstName: "Althea Mae",
+  id: "DEMO-2026-0001",
+  lrn: "123456789012",
+  firstName: "Juan",
   lastName: "Dela Cruz",
-  email: "althea.delacruz@student.marben.school",
-  phone: "0917 555 0148",
-  address: "144 Mabini Street, Barangay San Isidro, Quezon City",
-  birthDate: "March 14, 2009",
+  email: "juan.delacruz@demo.school",
+  phone: "0917 000 0000",
+  address: "123 Sample Street, Barangay Poblacion, Metro Manila",
+  birthDate: "January 1, 2010",
   bloodType: "O+",
   strand: "STEM",
   gradeLevel: "Grade 11",
   section: "STEM-A",
-  adviser: "Ms. Roselle Gonzales",
-  school: "Maben National High School - Main Campus",
-  enrolledSince: "August 12, 2023",
+  adviser: "Ms. Jane Doe",
+  school: "Demo High School - Main Campus",
+  enrolledSince: "June 2024",
   gwa: 91.25,
   rank: 6,
   classSize: 42,
   attendanceRate: 97.5,
   unitsOnHand: 15.5,
-  balance: 2480,
+  balance: 3000,
   nextDue: "October 15, 2026",
 } as const;
 
 export const guardian = {
-  name: "Maria Teresa Dela Cruz",
+  name: "Guardian Name",
   relationship: "Mother",
-  phone: "0918 222 7734",
-  email: "mt.delacruz@email.com",
+  phone: "0918 000 0000",
+  email: "guardian@demo.school",
   occupation: "Public school teacher",
 } as const;
 
@@ -139,7 +139,7 @@ export const subjects: Subject[] = [
     code: "PR1-11",
     name: "Practical Research 1",
     shortName: "Prac Research",
-    teacher: "Roselle Gonzales",
+    teacher: "Jane Doe",
     teacherTitle: "Ms.",
     room: "Room 118",
     units: 1.5,
@@ -277,18 +277,18 @@ export interface FeeItem {
 export const feeStatement = {
   schoolYear: "SY 2026–2027 · Q2",
   items: [
-    { label: "Tuition - Q2", amount: 18500, due: "Aug 24, 2026", status: "paid" },
-    { label: "Miscellaneous fees", amount: 3240, due: "Aug 24, 2026", status: "paid" },
-    { label: "Laboratory fee - Science", amount: 1200, due: "Sep 30, 2026", status: "partial", note: "₱800 of ₱1,200 settled" },
-    { label: "Digital student ID", amount: 350, due: "Oct 15, 2026", status: "pending" },
+    { label: "Tuition - Q2", amount: 10000, due: "Aug 15, 2026", status: "paid" },
+    { label: "Miscellaneous fees", amount: 5000, due: "Aug 15, 2026", status: "paid" },
+    { label: "Laboratory fee - Science", amount: 1000, due: "Sep 15, 2026", status: "partial", note: "₱500 of ₱1,000 settled" },
+    { label: "Digital student ID", amount: 500, due: "Oct 15, 2026", status: "pending" },
   ] satisfies FeeItem[],
   payments: [
-    { label: "Initial deposit", amount: 12000, date: "Aug 3, 2026", or: "OR-26-01412" },
-    { label: "First installment", amount: 8810, date: "Sep 15, 2026", or: "OR-26-02877" },
+    { label: "Initial deposit", amount: 10000, date: "Aug 5, 2026", or: "OR-0001" },
+    { label: "First installment", amount: 3500, date: "Sep 15, 2026", or: "OR-0002" },
   ],
-  totalBilled: 23290,
-  totalPaid: 20810,
-  balance: 2480,
+  totalBilled: 16500,
+  totalPaid: 13500,
+  balance: 3000,
   nextDue: "October 15, 2026",
 } as const;
 
@@ -306,28 +306,28 @@ export interface DocumentRequest {
 
 export const documentRequests: DocumentRequest[] = [
   {
-    id: "REQ-1042",
+    id: "REQ-001",
     document: "Form 138 (Report Card)",
-    purpose: "Scholarship application - CHED StuFAP",
-    requestedOn: "Oct 6, 2026",
+    purpose: "Scholarship application",
+    requestedOn: "Oct 5, 2026",
     status: "processing",
-    eta: "Oct 14, 2026",
+    eta: "Oct 15, 2026",
     fee: 100,
   },
   {
-    id: "REQ-1038",
+    id: "REQ-002",
     document: "Good Moral Certificate",
-    purpose: "District science fair registration",
-    requestedOn: "Oct 2, 2026",
+    purpose: "School science fair registration",
+    requestedOn: "Oct 1, 2026",
     status: "ready",
     eta: "Ready for pickup",
     fee: 50,
   },
   {
-    id: "REQ-1029",
+    id: "REQ-003",
     document: "Certificate of Enrollment",
-    purpose: "Scholarship stipend renewal",
-    requestedOn: "Sep 21, 2026",
+    purpose: "Scholarship renewal",
+    requestedOn: "Sep 15, 2026",
     status: "ready",
     eta: "Ready for pickup",
     fee: 50,
@@ -450,8 +450,8 @@ export const notifications: Notification[] = [
   },
   {
     id: "NT-300",
-    title: "Payment received - ₱8,810.00",
-    body: "First installment posted to your account. Remaining balance: ₱2,480.00.",
+    title: "Payment received - ₱3,500.00",
+    body: "First installment posted to your account. Remaining balance: ₱3,000.00.",
     time: "Sep 15, 10:24 AM",
     read: false,
     kind: "fee",
@@ -459,7 +459,7 @@ export const notifications: Notification[] = [
   {
     id: "NT-297",
     title: "Excuse approved - Oct 2 absence",
-    body: "Ms. Gonzales approved the medical certificate for your Oct 2 absence.",
+    body: "Your adviser approved the medical certificate for your Oct 2 absence.",
     time: "Oct 3, 8:05 AM",
     read: true,
     kind: "attendance",

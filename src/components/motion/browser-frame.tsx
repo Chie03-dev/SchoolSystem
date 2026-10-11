@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 /** Browser chrome frame used to present the product preview on the landing page. */
 export function BrowserFrame({
-  url = "portal.marben.school",
+  url = "portal.demo.school",
   children,
   className,
 }: {

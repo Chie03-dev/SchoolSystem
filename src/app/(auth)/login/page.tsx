@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { BorderBeam } from "@/components/motion/border-beam";
 import { FadeRise } from "@/components/motion/fade-rise";
+import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/portal/switch";
@@ -44,7 +45,7 @@ export default function LoginPage() {
     window.setTimeout(() => {
       setLoading(false);
       toast.success(`Welcome back, ${student.firstName}`, {
-        description: "You are signed in to the Marben demo portal.",
+        description: "You are signed in to the demo portal.",
       });
       router.push("/portal/dashboard");
     }, 650);
@@ -76,14 +77,9 @@ export default function LoginPage() {
               href="/about"
               className="inline-flex items-center gap-2.5 rounded-md"
             >
-              <span
-                aria-hidden
-                className="grid size-8 place-items-center rounded-md bg-clay font-display text-base font-semibold text-primary-foreground"
-              >
-                M
-              </span>
+              <BrandMark className="size-8" iconClassName="size-4.5" />
               <span className="font-display text-xl leading-none font-semibold tracking-tight text-paper">
-                Marben
+                Demo
               </span>
             </Link>
           </FadeRise>
@@ -143,7 +139,7 @@ export default function LoginPage() {
             href="/about"
             className="rounded-md text-sm text-ink-muted underline-offset-2 transition-colors hover:text-ink hover:underline"
           >
-            What is Marben?
+            What is this demo?
           </Link>
         </div>
 
@@ -168,7 +164,7 @@ export default function LoginPage() {
                     id="email"
                     type="email"
                     autoComplete="email"
-                    placeholder="you@student.marben.school"
+                    placeholder="you@demo.school"
                     className="mt-1.5"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
@@ -254,7 +250,7 @@ export default function LoginPage() {
 
         <div className="text-center">
           <p className="text-xs text-ink-faint">
-            New to Marben?{" "}
+            New here?{" "}
             <Link
               href="/about"
               className="rounded-xs text-clay-hover underline-offset-2 hover:underline"
@@ -263,7 +259,7 @@ export default function LoginPage() {
             </Link>
           </p>
           <footer className="mt-3 text-[11px] text-ink-faint">
-            © 2026 Marben · Built for Philippine schools
+            © 2026 Demo · Built for Philippine schools
           </footer>
         </div>
       </div>

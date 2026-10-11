@@ -104,7 +104,7 @@ export function StudentIdCard({ hologram = true }: { hologram?: boolean }) {
             </div>
             <div>
               <dt className="inline text-ink-faint">Valid through </dt>
-              <dd className="inline font-medium">July 31, 2027</dd>
+              <dd className="inline font-medium">End of S.Y. 2026–2027</dd>
             </div>
           </dl>
 

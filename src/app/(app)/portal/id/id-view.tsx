@@ -40,7 +40,7 @@ export function StudentIdView() {
         </Reveal>
         <Reveal delay={0.15} className="rounded-xl border border-hairline bg-surface p-4 shadow-warm">
           <p className="text-[11px] tracking-wide text-ink-muted uppercase">Valid through</p>
-          <p className="mt-1 text-sm font-semibold">July 31, 2027</p>
+          <p className="mt-1 text-sm font-semibold">End of S.Y. 2026–2027</p>
         </Reveal>
         <Reveal delay={0.2} className="rounded-xl border border-hairline bg-surface p-4 shadow-warm">
           <p className="text-[11px] tracking-wide text-ink-muted uppercase">Emergency contact</p>

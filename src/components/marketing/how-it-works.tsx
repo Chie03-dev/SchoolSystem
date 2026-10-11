@@ -5,7 +5,7 @@ const steps = [
   {
     icon: ClipboardList,
     title: "Enroll your students",
-    body: "Import or type in strands, sections, subjects, and fee schedules. Marben structures everything for the school year.",
+    body: "Import or type in strands, sections, subjects, and fee schedules. Demo structures everything for the school year.",
     meta: "Week 1",
   },
   {

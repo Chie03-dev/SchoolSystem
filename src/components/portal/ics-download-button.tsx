@@ -21,13 +21,13 @@ export function IcsDownloadButton() {
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement("a");
         anchor.href = url;
-        anchor.download = "marben-class-schedule.ics";
+        anchor.download = "demo-class-schedule.ics";
         document.body.appendChild(anchor);
         anchor.click();
         anchor.remove();
         URL.revokeObjectURL(url);
         toast.success("Schedule exported", {
-          description: "marben-class-schedule.ics - import it into any calendar app.",
+          description: "demo-class-schedule.ics - import it into any calendar app.",
         });
       }}
     >

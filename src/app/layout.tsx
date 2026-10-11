@@ -3,23 +3,23 @@ import { fontSans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://marben.school"),
+  metadataBase: new URL("https://demo.school"),
   title: {
-    default: "Marben — The Student Portal Schools Can Call Their Own",
-    template: "%s · Marben",
+    default: "Demo — The Student Portal Schools Can Call Their Own",
+    template: "%s · Demo",
   },
   description:
-    "Marben is a modern student information system for Philippine schools — grades, attendance, schedules, fees, and digital IDs in one calm portal.",
-  applicationName: "Marben",
+    "A modern student information system for Philippine schools — grades, attendance, schedules, fees, and digital IDs in one calm portal.",
+  applicationName: "Demo",
   openGraph: {
     type: "website",
-    siteName: "Marben",
+    siteName: "Demo",
     locale: "en_PH",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marben — The Student Portal Schools Can Call Their Own",
+    title: "Demo — The Student Portal Schools Can Call Their Own",
     description:
       "Grades, attendance, schedules, fees, announcements, and a digital student ID — one calm, offline-friendly portal for Philippine schools.",
   },

@@ -4,22 +4,22 @@ import { Reveal } from "@/components/motion/reveal";
 
 const stats = [
   {
-    label: "Schools on Marben",
-    value: 128,
+    label: "Schools on board",
+    value: 100,
     variant: "number" as const,
     icon: School,
-    hint: "across 14 provinces",
+    hint: "and growing",
   },
   {
     label: "Students served",
-    value: 84000,
+    value: 50000,
     variant: "number" as const,
     icon: CalendarCheck2,
     hint: "JHS, SHS & college",
   },
   {
     label: "Fees collected / month",
-    value: 12800000,
+    value: 1000000,
     variant: "php" as const,
     icon: Wallet,
     hint: "verified, reconciled",
@@ -28,7 +28,7 @@ const stats = [
 
 export function StatsStrip() {
   return (
-    <section aria-label="Marben by the numbers" className="border-y border-hairline bg-surface-2/60">
+    <section aria-label="Demo by the numbers" className="border-y border-hairline bg-surface-2/60">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-hairline px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         {stats.map((stat, index) => (
           <Reveal

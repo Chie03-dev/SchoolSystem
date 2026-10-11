@@ -1,4 +1,4 @@
-# Marben - Student Information System (front-end showcase)
+# Demo - Student Information System (front-end showcase)
 
 A sellable, front-end-only student portal for Philippine schools, built on the
 **Paper & Clay** editorial design language: warm paper backgrounds, clay
@@ -40,7 +40,7 @@ npm run build      # production build + prerender
 `/login` - demo credentials are pre-filled in the panel (any values submit):
 
 ```
-althea.delacruz@student.marben.school
+juan.delacruz@demo.school
 demo1234
 ```
 

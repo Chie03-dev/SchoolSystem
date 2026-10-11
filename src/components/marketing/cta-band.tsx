@@ -34,7 +34,7 @@ export function CtaBand() {
                 nativeButton={false}
                 className="bg-surface text-clay hover:bg-surface/90"
                 render={
-                  <a href="mailto:hello@marben.school?subject=Marben%20demo%20request" />
+                  <a href="mailto:hello@demo.school?subject=Demo%20request" />
                 }
               >
                 Book a demo
@@ -46,10 +46,10 @@ export function CtaBand() {
               variant="outline"
               nativeButton={false}
               className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              render={<a href="mailto:hello@marben.school" />}
+              render={<a href="mailto:hello@demo.school" />}
             >
               <Mail aria-hidden />
-              hello@marben.school
+              hello@demo.school
             </Button>
           </div>
         </div>

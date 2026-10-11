@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LogOut, Settings } from "lucide-react";
+import { BrandMark } from "@/components/brand-mark";
 import { portalNav } from "./nav-items";
 import { student } from "@/data/student";
 import { cn } from "@/lib/utils";
@@ -26,14 +27,9 @@ export function PortalSidebar() {
     >
       <div className="flex h-14 items-center gap-2.5 border-b border-hairline px-5">
         <Link href="/" className="flex items-center gap-2.5">
-          <span
-            aria-hidden
-            className="grid size-7 place-items-center rounded-md bg-clay font-display text-sm font-semibold text-primary-foreground"
-          >
-            M
-          </span>
+          <BrandMark />
           <span className="font-display text-lg leading-none font-semibold tracking-tight">
-            Marben
+            Demo
           </span>
         </Link>
       </div>

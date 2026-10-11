@@ -49,7 +49,7 @@ export function buildScheduleIcs(
       if (!subject) continue;
 
       const date = firstOccurrence(weekday, options.startDate);
-      const uid = `${subject.code.toLowerCase()}-${weekday.toLowerCase()}-${date.getTime()}@marben.school`;
+      const uid = `${subject.code.toLowerCase()}-${weekday.toLowerCase()}-${date.getTime()}@demo.school`;
       const summary = `${subject.name} · ${subject.teacherTitle} ${subject.teacher}`;
 
       events.push(
@@ -63,7 +63,7 @@ export function buildScheduleIcs(
           `SUMMARY:${escapeText(summary)}`,
           `LOCATION:${escapeText(slot.room)}`,
           `DESCRIPTION:${escapeText(
-            `Subject ${subject.code} · ${subject.units} units · ${options.studentName} - exported from Marben`
+            `Subject ${subject.code} · ${subject.units} units · ${options.studentName} - exported from Demo`
           )}`,
           "END:VEVENT",
         ].join("\r\n")
@@ -74,10 +74,10 @@ export function buildScheduleIcs(
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Marben//Student Portal//EN",
+    "PRODID:-//Demo//Student Portal//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    `X-WR-CALNAME:${escapeText(`${options.studentName} - Class Schedule (Marben)`)}`,
+    `X-WR-CALNAME:${escapeText(`${options.studentName} - Class Schedule (Demo)`)}`,
     ...events,
     "END:VCALENDAR",
   ].join("\r\n");

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Marben - "Paper & Clay" editorial design language.
+ * Demo - "Paper & Clay" editorial design language.
  * Editorial tokens below are the single source of truth; the shadcn
  * variable names are mapped onto them so ui/ components inherit the
  * warm palette instead of their stock neutral values.

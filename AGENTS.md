@@ -8,7 +8,7 @@ This block is written and re-added by `next dev` - verify at `node_modules/next/
 
 <!-- END:nextjs-agent-rules -->
 
-## Marben project rules
+## Demo project rules
 
 - **Verification before every ship:** `npx tsc --noEmit && npm run lint && npm run build`
 - `next.config.ts` ships `cacheComponents: true` + `partialPrefetching: true`

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 
 const columns = [
   {
@@ -16,7 +17,7 @@ const columns = [
       { label: "Book a demo", href: "#demo" },
       { label: "Multi-campus", href: "#features" },
       { label: "Parent access", href: "#features" },
-      { label: "Contact", href: "mailto:hello@marben.school" },
+      { label: "Contact", href: "mailto:hello@demo.school" },
     ],
   },
   {
@@ -37,14 +38,9 @@ export function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/about" className="flex items-center gap-2.5">
-              <span
-                aria-hidden
-                className="grid size-7 place-items-center rounded-md bg-clay font-display text-sm font-semibold text-primary-foreground"
-              >
-                M
-              </span>
+              <BrandMark />
               <span className="font-display text-lg leading-none font-semibold tracking-tight">
-                Marben
+                Demo
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm text-ink-muted">
@@ -75,7 +71,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6 text-xs text-ink-faint">
-          <p>© 2026 Marben. Built for Philippine schools.</p>
+          <p>© 2026 Demo. Built for Philippine schools.</p>
           <p>Grades · Attendance · Schedules · Fees · Announcements · Digital ID</p>
         </div>
       </div>

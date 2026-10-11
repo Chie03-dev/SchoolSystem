@@ -12,7 +12,7 @@ import { formatPHP } from "@/lib/format";
 const tiles = [
   { label: "GWA", value: "91.25", icon: BookOpenCheck },
   { label: "Attendance", value: "97.5%", icon: CalendarCheck2 },
-  { label: "Balance", value: formatPHP(2480), icon: Wallet },
+  { label: "Balance", value: formatPHP(3000), icon: Wallet },
   { label: "Excuses", value: "1 pending", icon: ClipboardList },
 ];
 
@@ -64,7 +64,7 @@ export function PortalPreview() {
           <div>
             <p className="text-[11px] text-ink-muted">Friday, October 9, 2026</p>
             <p className="font-display text-base font-semibold sm:text-lg">
-              Welcome back, Althea
+              Welcome back, Juan
             </p>
           </div>
           <div className="flex items-center gap-2">

@@ -50,7 +50,7 @@ export function FeatureGrid() {
           One portal, every school workflow
         </h2>
         <p className="mt-4 text-ink-muted">
-          Marben replaces the spreadsheet sprawl with a single system of
+          Demo replaces the spreadsheet sprawl with a single system of
           record - designed for the way Philippine schools actually run.
         </p>
       </div>
