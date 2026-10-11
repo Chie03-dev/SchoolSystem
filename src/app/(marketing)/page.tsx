@@ -1,29 +1,13 @@
-import type { Metadata } from "next";
-import { CtaBand } from "@/components/marketing/cta-band";
-import { FeatureGrid } from "@/components/marketing/feature-grid";
-import { Hero } from "@/components/marketing/hero";
-import { HowItWorks } from "@/components/marketing/how-it-works";
-import { SchoolsMarquee } from "@/components/marketing/schools-marquee";
-import { StatsStrip } from "@/components/marketing/stats-strip";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Marben — The Student Portal Schools Can Call Their Own",
-  },
-  description:
-    "Grades, attendance, schedules, fees, announcements, and a digital student ID in one calm, offline-friendly portal for Philippine schools.",
-  alternates: { canonical: "/" },
+export const metadata = {
+  title: "Marben",
 };
 
+/**
+ * The app root goes straight to the portal sign-in; the marketing page
+ * lives at /about.
+ */
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <StatsStrip />
-      <FeatureGrid />
-      <HowItWorks />
-      <SchoolsMarquee />
-      <CtaBand />
-    </>
-  );
+  redirect("/login");
 }

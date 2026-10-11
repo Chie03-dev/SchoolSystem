@@ -6,7 +6,7 @@ date **2026-10-09** (Friday, Week 8 of Q2).
 
 ## Ship checklist (from the plan)
 
-- [x] Landing page (hero + product preview, stats, feature grid, how it works, CTA + footer)
+- [x] Landing page (moved to `/about`; `/` redirects to `/login`)
 - [x] Login page (split editorial layout, demo account, redirects to portal)
 - [x] Portal shell: sidebar + topbar + mobile bottom nav + ⌘K command palette
 - [x] Dashboard: greeting, stat tiles, today's classes, upcoming deadlines, announcements

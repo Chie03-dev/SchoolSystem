@@ -47,7 +47,8 @@ demo1234
 
 | Route                      | What it is                                        |
 | -------------------------- | ------------------------------------------------- |
-| `/`                        | Marketing landing (hero + product preview, stats, features, how it works, CTA) |
+| `/`                        | Redirects straight to `/login`                    |
+| `/about`                   | Marketing landing (hero + product preview, stats, features, how it works, CTA) |
 | `/login`                   | Split editorial sign-in with demo account         |
 | `/portal/dashboard`        | Greeting, stat tiles, today's classes, deadlines, announcements |
 | `/portal/courses`          | 8 Grade 11 STEM subjects                          |

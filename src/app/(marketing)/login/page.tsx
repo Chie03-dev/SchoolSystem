@@ -72,7 +72,7 @@ export default function LoginPage() {
     <main className="grid flex-1 lg:grid-cols-2">
       <section className="relative hidden flex-col justify-between overflow-hidden border-r border-hairline bg-surface-2/60 p-10 lg:flex">
         <div>
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/about" className="flex items-center gap-2.5">
             <span
               aria-hidden
               className="grid size-8 place-items-center rounded-md bg-clay font-display text-base font-semibold text-primary-foreground"
@@ -116,7 +116,7 @@ export default function LoginPage() {
       <section className="flex flex-1 items-center justify-center px-5 py-12">
         <div className="w-full max-w-sm">
           <Link
-            href="/"
+            href="/about"
             className="mb-8 inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink lg:hidden"
           >
             <ArrowLeft className="size-4" aria-hidden />
@@ -124,7 +124,7 @@ export default function LoginPage() {
           </Link>
 
           <div className="lg:hidden">
-            <Link href="/" className="mb-6 flex items-center gap-2.5">
+            <Link href="/about" className="mb-6 flex items-center gap-2.5">
               <span
                 aria-hidden
                 className="grid size-8 place-items-center rounded-md bg-clay font-display text-base font-semibold text-primary-foreground"
@@ -234,7 +234,7 @@ export default function LoginPage() {
 
           <p className="mt-6 text-center text-xs text-ink-faint">
             New to Marben?{" "}
-            <Link href="/" className="text-clay underline-offset-2 hover:underline">
+            <Link href="/about" className="text-clay underline-offset-2 hover:underline">
               Explore what your school gets
             </Link>
           </p>
