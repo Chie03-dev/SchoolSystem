@@ -68,6 +68,39 @@ demo1234
 Press <kbd>⌘K</kbd> (or <kbd>Ctrl K</kbd>) anywhere in the portal for the
 command palette.
 
+## Screenshots
+
+Every screen of the demo at 1440px, in the order you&apos;ll meet them -
+starting at the login page. All pages run on the fixed sample dataset.
+
+| Login | Landing (`/about`) |
+| --- | --- |
+| ![Login](screenshots/login.jpg) | ![Landing](screenshots/landing.jpg) |
+
+| Dashboard | Courses |
+| --- | --- |
+| ![Dashboard](screenshots/dashboard.jpg) | ![Courses](screenshots/courses.jpg) |
+
+| Course detail | Grades |
+| --- | --- |
+| ![Course detail](screenshots/course-detail.jpg) | ![Grades](screenshots/grades.jpg) |
+
+| Schedule | Attendance |
+| --- | --- |
+| ![Schedule](screenshots/schedule.jpg) | ![Attendance](screenshots/attendance.jpg) |
+
+| Fees | Assignments |
+| --- | --- |
+| ![Fees](screenshots/fees.jpg) | ![Assignments](screenshots/assignments.jpg) |
+
+| Announcements | Notifications |
+| --- | --- |
+| ![Announcements](screenshots/announcements.jpg) | ![Notifications](screenshots/notifications.jpg) |
+
+| Profile | Student ID |
+| --- | --- |
+| ![Profile](screenshots/profile.jpg) | ![Student ID](screenshots/student-id.jpg) |
+
 ## Design language (Paper & Clay)
 
 All tokens live in `src/app/globals.css` (`:root` + Tailwind v4 `@theme`):
