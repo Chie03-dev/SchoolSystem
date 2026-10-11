@@ -205,7 +205,7 @@ async function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
               <ProgressRing
                 value={rate}
                 size={84}
-                thickness={7}
+                thickness={6}
                 label={`${rate}%`}
                 sublabel="attended"
               />

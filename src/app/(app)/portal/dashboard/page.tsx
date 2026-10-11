@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   CalendarDays,
+  CircleCheck,
   ClipboardList,
   GraduationCap,
   Megaphone,
@@ -207,21 +208,52 @@ export default function DashboardPage() {
         <section className="space-y-6">
           <Reveal delay={0.05} className="rounded-xl border border-hairline bg-surface p-4 shadow-warm">
             <h3 className="font-display text-lg font-semibold">Attendance</h3>
-            <div className="mt-2 flex items-center gap-4">
+            <div className="mt-3 flex items-center gap-4">
               <ProgressRing
                 value={student.attendanceRate}
-                size={92}
+                size={104}
                 label={`${student.attendanceRate}%`}
                 sublabel="this quarter"
+                className="shrink-0"
               />
-              <div className="text-sm text-ink-muted">
-                <p>
-                  <span className="font-semibold text-ink">2 lates</span> · 1
-                  excused absence
-                </p>
-                <p className="mt-1 text-xs">Keep it up - no unexcused absences.</p>
-              </div>
+              <span aria-hidden className="h-16 w-px shrink-0 bg-hairline" />
+              <dl className="min-w-0 flex-1 space-y-2.5">
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="size-2 shrink-0 rounded-full bg-warn-deep"
+                  />
+                  <dt className="text-sm text-ink-muted">Lates</dt>
+                  <dd className="ml-auto text-sm font-semibold tabular-nums text-ink">
+                    2
+                  </dd>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="size-2 shrink-0 rounded-full bg-hairline-strong"
+                  />
+                  <dt className="text-sm text-ink-muted">Excused absences</dt>
+                  <dd className="ml-auto text-sm font-semibold tabular-nums text-ink">
+                    1
+                  </dd>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="size-2 shrink-0 rounded-full bg-ok"
+                  />
+                  <dt className="text-sm text-ink-muted">Unexcused</dt>
+                  <dd className="ml-auto text-sm font-semibold tabular-nums text-ink">
+                    0
+                  </dd>
+                </div>
+              </dl>
             </div>
+            <p className="mt-4 flex items-center gap-1.5 border-t border-hairline pt-3 text-xs text-ink-muted">
+              <CircleCheck className="size-3.5 shrink-0 text-ok-deep" aria-hidden />
+              Keep it up - no unexcused absences.
+            </p>
           </Reveal>
 
           <Reveal delay={0.1} className="rounded-xl border border-hairline bg-surface shadow-warm">

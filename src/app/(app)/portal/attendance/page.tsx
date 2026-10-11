@@ -120,6 +120,7 @@ export default function AttendancePage() {
           <ProgressRing
             value={student.attendanceRate}
             size={128}
+            thickness={6}
             label={`${student.attendanceRate}%`}
             sublabel="Q2 attendance"
           />

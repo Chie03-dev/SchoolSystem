@@ -148,7 +148,7 @@ export function GradesView() {
             <ProgressRing
               value={gwa ?? 0}
               size={120}
-              thickness={9}
+              thickness={6}
               label={formatGrade(gwa)}
               sublabel={`${activeTerm.label} average`}
             />
