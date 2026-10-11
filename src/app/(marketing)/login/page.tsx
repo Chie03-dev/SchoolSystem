@@ -6,6 +6,7 @@ import { ArrowLeft, CalendarCheck2, IdCard, ShieldCheck, Wallet } from "lucide-r
 import Link from "next/link";
 import { toast } from "sonner";
 import { BorderBeam } from "@/components/motion/border-beam";
+import { SchoolPhoto } from "@/components/marketing/school-photo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/portal/switch";
@@ -103,6 +104,8 @@ export default function LoginPage() {
               </li>
             ))}
           </ul>
+
+          <SchoolPhoto className="mt-8" />
         </div>
 
         <p className="max-w-md text-sm text-ink-muted">
@@ -136,6 +139,8 @@ export default function LoginPage() {
               </span>
             </Link>
           </div>
+
+          <SchoolPhoto className="mb-6 lg:hidden" />
 
           <h1 className="font-display text-2xl font-semibold tracking-tight">
             Sign in to the portal
