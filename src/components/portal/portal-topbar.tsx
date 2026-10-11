@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -104,14 +105,16 @@ export function PortalTopbar({ onOpenPalette }: { onOpenPalette: () => void }) {
             <ChevronDown className="size-3.5 text-ink-faint" aria-hidden />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
-            <DropdownMenuLabel>
-              <p className="text-sm font-medium text-ink">
-                {student.firstName} {student.lastName}
-              </p>
-              <p className="truncate text-xs font-normal text-ink-muted">
-                {student.email}
-              </p>
-            </DropdownMenuLabel>
+            <DropdownMenuGroup>
+              <DropdownMenuLabel>
+                <p className="text-sm font-medium text-ink">
+                  {student.firstName} {student.lastName}
+                </p>
+                <p className="truncate text-xs font-normal text-ink-muted">
+                  {student.email}
+                </p>
+              </DropdownMenuLabel>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem render={<Link href="/portal/profile" />}>
               <User aria-hidden />
