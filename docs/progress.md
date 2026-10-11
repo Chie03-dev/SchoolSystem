@@ -7,7 +7,7 @@ date **2026-10-09** (Friday, Week 8 of Q2).
 ## Ship checklist (from the plan)
 
 - [x] Landing page (moved to `/about`; `/` redirects to `/login`)
-- [x] Login page (split editorial layout, demo account, redirects to portal)
+- [x] Login page (campus-photo rail + form panel, demo account, redirects to portal)
 - [x] Portal shell: sidebar + topbar + mobile bottom nav + ⌘K command palette
 - [x] Dashboard: greeting, stat tiles, today's classes, upcoming deadlines, announcements
 - [x] Courses + course detail (grades, slots, attendance, assignments)
@@ -93,6 +93,13 @@ npm run build
   the built font manifest.
 - **`display: optional`** on all `next/font` faces: fonts paint with the first
   content paint or never swap in late (no CLS, no late LCP repaint).
+- **Login redesign (post-ship)**: the washed-out full-bleed backdrop became a
+  two-column layout - a full-height campus-photo rail (warm night-paper
+  scrim, school identity, headline, live proof chips: GWA 91.25, attendance
+  97.5%, rank 6/42) beside the paper form panel; on mobile the rail collapses
+  to a photo banner. Staged entrance via the new `FadeRise` motion primitive
+  (framer-motion, reduced-motion safe); form logic, validation, and the demo
+  account box are unchanged.
 - **Toaster** (sonner) lives in the portal shell and login page only, keeping
   toast infrastructure off the marketing landing.
 

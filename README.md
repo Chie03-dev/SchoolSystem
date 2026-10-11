@@ -50,7 +50,7 @@ demo1234
 | -------------------------- | ------------------------------------------------- |
 | `/`                        | Redirects straight to `/login`                    |
 | `/about`                   | Marketing landing (hero + product preview, stats, features, how it works, CTA) |
-| `/login`                   | Split editorial sign-in with demo account         |
+| `/login`                   | Campus-photo editorial sign-in with demo account     |
 | `/portal/dashboard`        | Greeting, stat tiles, today's classes, deadlines, announcements |
 | `/portal/courses`          | 8 Grade 11 STEM subjects                          |
 | `/portal/courses/[id]`     | Course detail: grades, slots, attendance, assignments |
@@ -97,7 +97,8 @@ the shell chrome with printable headers for grades, fees, and schedule.
 src/
 ├─ app/
 │  ├─ layout.tsx              # root layout, fonts, font preloads
-│  ├─ (marketing)/            # landing + login (marketing shell)
+│  ├─ (marketing)/            # landing (marketing shell)
+│  ├─ (auth)/                 # login (minimal shell: photo rail + form panel)
 │  └─ (app)/portal/           # portal shell + all portal routes
 ├─ components/
 │  ├─ ui/                     # shadcn primitives
