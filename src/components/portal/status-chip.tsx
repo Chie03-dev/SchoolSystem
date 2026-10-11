@@ -8,6 +8,7 @@ const tones = {
   danger: "bg-danger/12 text-danger",
   clay: "bg-clay/12 text-clay-hover",
   sage: "bg-sage/12 text-sage-deep",
+  teal: "bg-viz-teal/12 text-viz-teal-deep",
   neutral: "bg-surface-2 text-ink-muted",
 } as const;
 

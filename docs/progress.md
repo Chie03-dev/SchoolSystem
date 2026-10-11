@@ -54,6 +54,14 @@ npm run build
 
 ## Known gaps / decisions
 
+- **Theme pass (post-ship)**: clay was tuned from `#B4552D` to `#A8481F`
+  (hover `#8A4320`) — a deeper terracotta that raises white-on-clay contrast
+  from 4.91 to 5.82:1 and clay-on-paper from 4.59 to 5.44:1. A categorical
+  data-viz scale was added (`--viz-teal`, `--viz-plum`, remapped
+  `chart-1..5` = clay · sage · teal · warn · plum) and applied to subject
+  category chips; print now renders on warm paper (`#FDFBF7`) with tinted
+  report headers. Dark mode ("night paper") was scoped out — the token
+  architecture (`:root` + `@theme` mapping) is ready for it.
 - **Lighthouse performance**: measured on the production `next start` server
   (Lighthouse 13.5, headless Chromium):
   - Landing — accessibility 100, best-practices 100, SEO 100, CLS 0.

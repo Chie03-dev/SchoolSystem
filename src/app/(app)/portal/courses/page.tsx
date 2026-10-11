@@ -13,7 +13,7 @@ export const metadata = {
 const categoryTone = {
   Core: "clay",
   Applied: "sage",
-  Specialized: "neutral",
+  Specialized: "teal",
 } as const;
 
 export default function CoursesPage() {

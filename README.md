@@ -75,10 +75,12 @@ All tokens live in `src/app/globals.css` (`:root` + Tailwind v4 `@theme`):
 | Surfaces           | `--paper #FAF7F1`, `--surface #FFFFFF`, `--surface-2 #F4EFE6` |
 | Text               | `--ink #1C1917`, `--ink-muted #57504A`, `--ink-faint #756B62` |
 | Hairlines          | `--hairline #E6DDCF`, `--hairline-strong #D3C5B0`             |
-| Accents            | `--clay #B4552D`, `--clay-hover #8F4222`, `--sage #6E7F5C`    |
+| Accents            | `--clay #A8481F`, `--clay-hover #8A4320`, `--sage #6E7F5C`    |
 | Status             | `--ok`, `--warn`, `--danger` (+ `-deep` text-safe variants)   |
+| Categorical (viz)  | `--viz-teal #4F7A78`, `--viz-plum #7A5560` (+ `-deep`), chart-1..5 = clay · sage · teal · warn · plum |
 | Radii              | 8 / 10 / 14 px (`rounded-md/lg/xl`)                           |
 | Shadows            | `shadow-warm`, `shadow-warm-lg` (warm-tinted, never pure black) |
+| Print              | warm paper background (`#FDFBF7`) + tinted report headers      |
 
 shadcn's stock neutral variables are mapped onto this palette, so every
 `ui/` component inherits the editorial look.

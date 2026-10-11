@@ -20,12 +20,12 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
+            <div
             style={{
               width: 64,
               height: 64,
               borderRadius: 16,
-              background: "#B4552D",
+              background: "#A8481F",
               color: "#FFF8F2",
               fontSize: 36,
               fontWeight: 600,

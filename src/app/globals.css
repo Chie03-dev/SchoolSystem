@@ -22,9 +22,14 @@
   --hairline-strong: #d3c5b0;
 
   /* Accents */
-  --clay: #b4552d;
-  --clay-hover: #8f4222;
+  --clay: #a8481f;
+  --clay-hover: #8a4320;
   --sage: #6e7f5c;
+
+  /* Categorical data-viz scale (charts, strands, categories) */
+  --viz-teal: #4f7a78;
+  --viz-teal-deep: #426b69;
+  --viz-plum: #7a5560;
 
   /* Status */
   --ok: #4c7a54;
@@ -59,9 +64,9 @@
   --ring: var(--clay);
   --chart-1: var(--clay);
   --chart-2: var(--sage);
-  --chart-3: var(--warn);
-  --chart-4: var(--ok);
-  --chart-5: var(--danger);
+  --chart-3: var(--viz-teal);
+  --chart-4: var(--warn);
+  --chart-5: var(--viz-plum);
   --radius: 0.625rem;
   --sidebar: var(--surface);
   --sidebar-foreground: var(--ink);
@@ -133,6 +138,9 @@
   --color-warn-deep: var(--warn-deep);
   --color-danger: var(--danger);
   --color-tint: var(--tint);
+  --color-viz-teal: var(--viz-teal);
+  --color-viz-teal-deep: var(--viz-teal-deep);
+  --color-viz-plum: var(--viz-plum);
 
   /* Typography */
   --font-sans: var(--font-sans);
@@ -315,11 +323,8 @@
   [data-print-hide] {
     display: none !important;
   }
-  body::before {
-    display: none !important;
-  }
   body {
-    background: #ffffff;
+    background: #fdfbf7;
   }
   [data-reveal] {
     opacity: 1 !important;
@@ -351,13 +356,18 @@
   }
 }
 
-/* Print-only report-card header (grades page) */
+/* Print-only report-card header (grades, fees, schedule pages) */
 .print-only {
   display: none;
 }
 @media print {
   .print-only {
     display: block;
+    margin-bottom: 14px;
+    border: 1px solid #e6ddcf;
+    border-radius: 8px;
+    background: #f4efe6;
+    padding: 14px 18px;
   }
 }
 
