@@ -183,16 +183,3 @@ Local commands (after `npm install`):
 npm run build:worker   # patch adapter + build Next + transform to a Worker
 npm run preview        # serve the Worker locally on :8787
 ```
-
-Notes:
-
-- `scripts/patch-opennext.mjs` applies upstream fix
-  [opennextjs#1356](https://github.com/opennextjs/opennextjs-cloudflare/pull/1356)
-  (Next 16.4 `preview-props.json` manifest) on every build; delete it once the
-  adapter ships the fix.
-- Local preview needs WSL or Linux - the OpenNext runtime is unsupported on
-  Windows and can hang there. Development itself is plain `npm run dev`.
-- `next/image` runs `unoptimized` (Cloudflare Images is a paid feature); the
-  only image is a 216 KB photo.
-- After the first deploy, update `metadataBase` in `src/app/layout.tsx` to the
-  live `workers.dev` (or custom) domain so OG and canonical URLs resolve.
