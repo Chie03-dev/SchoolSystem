@@ -1,6 +1,6 @@
 # Demo - Student Information System (front-end showcase)
 
-A sellable, front-end-only student portal for Philippine schools, built on the
+A student portal for Philippine schools, built on the
 **Paper & Clay** editorial design language: warm paper backgrounds, clay
 accents, and a single Inter family for every typographic role (body, UI,
 display, tabular data).
